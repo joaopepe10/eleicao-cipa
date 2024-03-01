@@ -10,10 +10,12 @@ public class EleicaoContext : DbContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.ApplyConfigurationsFromAssembly(GetType().Assembly);
+
     }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
     }
     public DbSet<Usuario> Usuarios { get; set; }
+    public DbSet<Candidato> Candidatos { get; set; }
 }
