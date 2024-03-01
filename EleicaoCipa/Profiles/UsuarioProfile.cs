@@ -11,5 +11,6 @@ public class UsuarioProfile : Profile
         CreateMap<CreateUsuarioDto, Usuario>();
         CreateMap<Usuario, ReadUsuarioDto>();
         CreateMap<UpdateUsuarioDto, Usuario>();
+        CreateMap<Usuario, ReadAllCandidatosDto>();
     }
 }
