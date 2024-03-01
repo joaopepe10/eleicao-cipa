@@ -1,4 +1,11 @@
+using EleicaoCipa.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("EleicaoConnection");
+builder.Services.AddDbContext<EleicaoContext>(opts => 
+    opts.UseLazyLoadingProxies().UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 // Add services to the container.
 
