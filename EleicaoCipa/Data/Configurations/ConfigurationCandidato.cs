@@ -12,8 +12,13 @@ public class ConfigurationCandidato : IEntityTypeConfiguration<Candidato>
             .HasKey(candidato => candidato.Id);
 
         builder
+            .Property(candidato => candidato.Discurso)
+            .HasColumnType("text")
+            .IsRequired();
+
+        builder
             .HasOne(candidato => candidato.Usuario)
-            .WithOne(usuario => usuario.Candidato)
-            .HasForeignKey<Candidato>(candidato => candidato.UsuarioId);
+            .WithMany(usuario => usuario.Candidatos)
+            .HasForeignKey(candidato => candidato.UsuarioId);
     }
 }
