@@ -1,4 +1,4 @@
-﻿namespace EleicaoCipa.Data.Dto.UsuarioDto;
+﻿namespace EleicaoCipa.Data.Dto.UsuarioDto.ResponseDto;
 
 public class ReadUsuarioDto
 {

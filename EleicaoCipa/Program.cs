@@ -1,7 +1,12 @@
+using EleicaoCipa.ApplicationService;
 using EleicaoCipa.Data;
+using EleicaoCipa.Data.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddScoped<EleicaoContext>();
+builder.Services.AddScoped<EleicaoRepository>();
+builder.Services.AddScoped<ApplicationServiceEleicao>();
 
 var connectionString = builder.Configuration.GetConnectionString("EleicaoConnection");
 builder.Services.AddDbContext<EleicaoContext>(opts => 

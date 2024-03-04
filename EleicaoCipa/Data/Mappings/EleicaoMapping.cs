@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EleicaoCipa.Data.Configurations;
 
-public class ConfigurationEleicao : IEntityTypeConfiguration<Eleicao>
+public class EleicaoMapping : IEntityTypeConfiguration<Eleicao>
 {
     public void Configure(EntityTypeBuilder<Eleicao> builder)
     {
@@ -13,22 +13,25 @@ public class ConfigurationEleicao : IEntityTypeConfiguration<Eleicao>
 
         builder
             .Property(eleicao => eleicao.DataInicio)
+            .HasColumnName("data_inicio")
             .HasColumnType("datetime")
             .IsRequired();
 
         builder
             .Property(eleicao => eleicao.DataFim)
+            .HasColumnName("data_fim")
             .HasColumnType("datetime")
             .IsRequired();
 
         builder
             .Property(eleicao => eleicao.Status)
+            .HasColumnName("status")
             .HasColumnType("tinyint")
             .IsRequired();
 
         builder
             .HasMany(eleicao => eleicao.Candidatos)
             .WithOne(candidato => candidato.Eleicao)
-            .HasForeignKey(eleicao => eleicao.EleicaoId);
+            .HasForeignKey(candidato => candidato.EleicaoId);
     }
 }

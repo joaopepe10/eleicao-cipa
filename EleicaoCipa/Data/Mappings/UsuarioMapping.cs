@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EleicaoCipa.Data.Configurations;
 
-public class ConfigurationUsuario : IEntityTypeConfiguration<Usuario>
+public class UsuarioMapping : IEntityTypeConfiguration<Usuario>
 {
     public void Configure(EntityTypeBuilder<Usuario> builder)
     {

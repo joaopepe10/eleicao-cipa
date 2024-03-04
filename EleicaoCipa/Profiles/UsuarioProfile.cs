@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-using EleicaoCipa.Data.Dto.UsuarioDto;
+using EleicaoCipa.Data.Dto.UsuarioDto.RequestDto;
+using EleicaoCipa.Data.Dto.UsuarioDto.ResponseDto;
 using EleicaoCipa.Model;
 
 namespace EleicaoCipa.Profiles;

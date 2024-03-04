@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EleicaoCipa.Data;
-using EleicaoCipa.Data.Dto.UsuarioDto;
+using EleicaoCipa.Data.Dto.UsuarioDto.RequestDto;
+using EleicaoCipa.Data.Dto.UsuarioDto.ResponseDto;
 using EleicaoCipa.Model;
 using Microsoft.AspNetCore.Mvc;
 

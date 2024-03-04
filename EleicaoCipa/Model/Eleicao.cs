@@ -8,5 +8,6 @@ public class Eleicao
     public DateTime DataInicio { get; set; }
     public DateTime DataFim { get; set; }
     public StatusEnum Status {  get; set; }
+    public int CandidatoId { get; set; }
     public virtual ICollection<Candidato> Candidatos { get; set; }
 }

@@ -3,7 +3,8 @@ using EleicaoCipa.Data.Dto.UsuarioDto;
 using EleicaoCipa.Data;
 using EleicaoCipa.Model;
 using Microsoft.AspNetCore.Mvc;
-using EleicaoCipa.Data.Dto.CandidatoDto;
+using EleicaoCipa.Data.Dto.CandidatoDto.RequestDto;
+using EleicaoCipa.Data.Dto.CandidatoDto.ResponseDto;
 
 namespace EleicaoCipa.Controller;
 [ApiController]
