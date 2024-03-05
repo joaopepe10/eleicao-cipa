@@ -11,6 +11,8 @@ public class EleicaoProfile : Profile
     public EleicaoProfile()
     {
         CreateMap<CreateEleicaoDto, Eleicao>();
+        CreateMap<CreateEleicaoDto, ReadEleicaoDto>().ReverseMap();
+
         CreateMap<Eleicao, ReadEleicaoDto>()
             .ForMember(dto => dto.Status, opts => opts.MapFrom(entidade => Enum.GetName(typeof(StatusEnum), entidade.Status)));
         CreateMap<UpadateStatusEleicaoDto, Eleicao>();

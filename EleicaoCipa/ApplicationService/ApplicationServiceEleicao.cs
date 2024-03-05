@@ -3,7 +3,6 @@ using EleicaoCipa.Data.Dto.EleicaoDto.RequestDto;
 using EleicaoCipa.Data.Dto.EleicaoDto.ResponseDto;
 using EleicaoCipa.Data.Repository;
 using EleicaoCipa.Model;
-using System.Web.Http.OData;
 
 namespace EleicaoCipa.ApplicationService;
 
@@ -19,20 +18,13 @@ public class ApplicationServiceEleicao
 
     public ReadEleicaoDto Update<TDTO>(TDTO dto, int id)
     {
-        var entity = GetById(id);
+        var entity = _repository.GetById(id);
         if (entity == null) throw new Exception("Id de eleição inválido!");        
         _mapper.Map(dto, entity);
         _repository.Update(entity);
         return _mapper.Map<ReadEleicaoDto>(entity);
     }
-
-    public ReadEleicaoDto? UpdatePatch(Delta<UpdateEleicaoDto> alteracoes, int id)
-    {
-        var dto = _mapper.Map<UpdateEleicaoDto>(_repository.GetById(id));
-        alteracoes.Patch(dto);
-        var entity = _mapper.Map<Eleicao>(dto);
-        return _mapper.Map<ReadEleicaoDto>(_repository.UpdatePatch(entity));
-    }
+   
 
     public ReadEleicaoDto Post(CreateEleicaoDto dto)
     {

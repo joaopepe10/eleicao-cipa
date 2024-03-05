@@ -1,8 +1,5 @@
-﻿using EleicaoCipa.Data.Dto;
-using EleicaoCipa.Data.Dto.EleicaoDto.RequestDto;
-using EleicaoCipa.Model;
+﻿using EleicaoCipa.Model;
 using Microsoft.EntityFrameworkCore;
-using System.Web.Http.OData;
 
 namespace EleicaoCipa.Data.Repository;
 
@@ -27,7 +24,7 @@ public class EleicaoRepository
         _context.SaveChanges();
     }
 
-    public Eleicao UpdatePatch(Eleicao eleicao)
+    public Eleicao Patch(Eleicao eleicao)
     {
         _context.Update(eleicao);
         _context.SaveChanges();

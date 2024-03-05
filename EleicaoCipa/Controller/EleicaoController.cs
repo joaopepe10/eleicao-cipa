@@ -1,13 +1,9 @@
-﻿using AutoMapper;
-using EleicaoCipa.ApplicationService;
-using EleicaoCipa.Data;
+﻿using EleicaoCipa.ApplicationService;
 using EleicaoCipa.Data.Dto.EleicaoDto.RequestDto;
 using EleicaoCipa.Data.Dto.EleicaoDto.ResponseDto;
 using EleicaoCipa.Data.Repository;
-using EleicaoCipa.Model;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Web.Http.OData;
 
 namespace EleicaoCipa.Controller;
 [ApiController]
@@ -60,15 +56,9 @@ public class EleicaoController : ControllerBase
     //}
 
     [HttpPut("data-fim/{id}")]
-    public IActionResult UpdateDataFim(int id, [FromBody] UpdateEleicaoDataFimDto dto)
+    public IActionResult UpdateDataFim(int id, [FromBody] CreateEleicaoDto dto)
     {        
         return Ok(_service.Update(dto, id));
     }
-    [HttpPatch("{id}")]
-    public IActionResult UpdatePatch(int id, [FromBody] Delta<UpdateEleicaoDto> alteracoes)
-    {
-        if (alteracoes == null) return NotFound();        
-        var responseDto = _service.UpdatePatch(alteracoes, id);
-        return Ok(responseDto);
-    }
+    
 }
