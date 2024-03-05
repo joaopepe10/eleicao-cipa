@@ -11,8 +11,8 @@ namespace EleicaoCipa.Controller;
 [Route("[controller]")]
 public class CandidatoController : ControllerBase
 {
-    private EleicaoContext _context;
-    private IMapper _mapper;
+    private readonly EleicaoContext _context;
+    private readonly IMapper _mapper;
 
     public CandidatoController(EleicaoContext context, IMapper mapper)
     {
