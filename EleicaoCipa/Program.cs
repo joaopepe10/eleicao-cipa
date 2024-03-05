@@ -8,9 +8,15 @@ builder.Services.AddScoped<EleicaoContext>();
 builder.Services.AddScoped<EleicaoRepository>();
 builder.Services.AddScoped<ApplicationServiceEleicao>();
 
-var connectionString = builder.Configuration.GetConnectionString("EleicaoConnection");
-builder.Services.AddDbContext<EleicaoContext>(opts => 
-    opts.UseLazyLoadingProxies().UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+{
+    builder.WithOrigins("*")
+           .AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader();
+}));
+
+builder.Services.AddDbContext<EleicaoContext>(opt => opt.UseInMemoryDatabase("testedb"));
 
 builder.Services.
     AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -23,6 +29,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseCors("corsapp");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -2,6 +2,7 @@
 using EleicaoCipa.Data.Dto.EleicaoDto.RequestDto;
 using EleicaoCipa.Data.Dto.EleicaoDto.ResponseDto;
 using EleicaoCipa.Data.Repository;
+using EleicaoCipa.Enums;
 using EleicaoCipa.Model;
 
 namespace EleicaoCipa.ApplicationService;
@@ -24,8 +25,7 @@ public class ApplicationServiceEleicao
         _repository.Update(entity);
         return _mapper.Map<ReadEleicaoDto>(entity);
     }
-   
-
+    
     public ReadEleicaoDto Post(CreateEleicaoDto dto)
     {
         if (dto == null) throw new Exception("Dados para criação de eleição inválidos!");
@@ -46,5 +46,36 @@ public class ApplicationServiceEleicao
     public IEnumerable<ReadEleicaoDto> GetAll()
     {
         return _mapper.Map<List<ReadEleicaoDto>>(_repository.GetAll());
+    }
+
+    public ReadEleicaoDto AbrirVotacao(int id)
+    {
+        var entity = BuscarEleicaoCadastradaPeloId(id);
+
+        entity.Status = StatusEnum.EmVotacao;
+
+        _repository.Update(entity);
+
+        return _mapper.Map<ReadEleicaoDto>(entity);
+    }
+
+    public ReadEleicaoDto AbrirVotacao(CreateEleicaoDto dto)
+    {
+        var entity = BuscarEleicaoCadastradaPeloId(dto.Id);
+
+        _mapper.Map(dto, entity);
+        _repository.Update(entity);
+        
+        return _mapper.Map<ReadEleicaoDto>(entity);
+    }
+
+    Eleicao BuscarEleicaoCadastradaPeloId(int id)
+    {
+        var entity = _repository.GetCadastradaById(id);
+
+        if (entity is null)
+            throw new Exception($"Eleição com ID {id} não encontrada.");
+
+        return entity;
     }
 }

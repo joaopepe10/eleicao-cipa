@@ -60,5 +60,18 @@ public class EleicaoController : ControllerBase
     {        
         return Ok(_service.Update(dto, id));
     }
-    
+
+    [HttpPut("{id}/abrir-votacao")]
+    public IActionResult AbrirVotacao(int id)
+    {
+        var dto = _service.AbrirVotacao(id);
+
+        return Ok(dto);
+    }
+
+    [HttpPut("abrir-votacao")]
+    public IActionResult AbrirVotacao([FromBody] CreateEleicaoDto dto)
+    {
+        return Ok(_service.AbrirVotacao(dto));
+    }
 }

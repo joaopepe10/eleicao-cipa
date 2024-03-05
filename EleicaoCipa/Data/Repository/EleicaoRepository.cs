@@ -1,4 +1,5 @@
-﻿using EleicaoCipa.Model;
+﻿using EleicaoCipa.Enums;
+using EleicaoCipa.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace EleicaoCipa.Data.Repository;
@@ -32,13 +33,19 @@ public class EleicaoRepository
     }
 
     public Eleicao GetById(int id) => _context.Eleicoes.FirstOrDefault(eleicao => eleicao.Id == id);
+
+    public Eleicao GetCadastradaById(int id)
+    {
+        return _context.Eleicoes.FirstOrDefault(prop => prop.Id.Equals(id) && prop.Status == StatusEnum.Cadastrada);
+    }
+
     // PERGUNTAR PQ DEU ERRO DE RETORNO QUANDO RETORNAVA SEM ATRIBUIR A VARIAVEL 
     public IEnumerable<Eleicao> GetAll()
     {
         var eleicoes = _context.Eleicoes
-            .Include(eleicao => eleicao.Candidatos)
-            .ThenInclude(candidato => candidato.Usuario)
-            .ToList();
+                               .Include(eleicao => eleicao.Candidatos)
+                               .ThenInclude(candidato => candidato.Usuario)
+                               .ToList();
         return eleicoes;
     }
 }
