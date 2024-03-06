@@ -4,20 +4,24 @@ using EleicaoCipa.Data.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddScoped<EleicaoContext>();
 builder.Services.AddScoped<EleicaoRepository>();
 builder.Services.AddScoped<ApplicationServiceEleicao>();
+builder.Services.AddScoped<ApplicationServiceCandidato>();
 
 var connectionString = builder.Configuration.GetConnectionString("EleicaoConnection");
 builder.Services.AddDbContext<EleicaoContext>(opts => 
-    opts.UseLazyLoadingProxies().UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+                                              opts
+                                              .UseLazyLoadingProxies()
+                                              .UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 builder.Services.
     AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Add services to the container.
-
 builder.Services.AddControllers().AddNewtonsoftJson();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
