@@ -6,7 +6,12 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<EleicaoContext>();
+
+// REPOSITORIES
 builder.Services.AddScoped<EleicaoRepository>();
+builder.Services.AddScoped<CandidatoRepository>();
+
+// SERVICES
 builder.Services.AddScoped<ApplicationServiceEleicao>();
 builder.Services.AddScoped<ApplicationServiceCandidato>();
 
