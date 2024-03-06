@@ -10,10 +10,12 @@ builder.Services.AddScoped<EleicaoContext>();
 // REPOSITORIES
 builder.Services.AddScoped<EleicaoRepository>();
 builder.Services.AddScoped<CandidatoRepository>();
+builder.Services.AddScoped<UsuarioRepository>();
 
 // SERVICES
 builder.Services.AddScoped<ApplicationServiceEleicao>();
 builder.Services.AddScoped<ApplicationServiceCandidato>();
+builder.Services.AddScoped<ApplicationServiceUsuario>();
 
 var connectionString = builder.Configuration.GetConnectionString("EleicaoConnection");
 builder.Services.AddDbContext<EleicaoContext>(opts => 

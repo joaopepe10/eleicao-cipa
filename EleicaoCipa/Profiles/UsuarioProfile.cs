@@ -9,9 +9,9 @@ public class UsuarioProfile : Profile
 {
     public UsuarioProfile()
     {
-        CreateMap<CreateUsuarioDto, Usuario>();
-        CreateMap<Usuario, ReadUsuarioDto>();
-        CreateMap<UpdateUsuarioDto, Usuario>();
-        CreateMap<Usuario, ReadAllCandidatosDto>();
+        CreateMap<CreateUsuarioDto, Usuario>().ReverseMap();
+        CreateMap<Usuario, ReadUsuarioDto>().ReverseMap();
+        CreateMap<UpdateUsuarioDto, Usuario>().ReverseMap();
+        CreateMap<Usuario, ReadAllCandidatosDto>().ReverseMap();
     }
 }
