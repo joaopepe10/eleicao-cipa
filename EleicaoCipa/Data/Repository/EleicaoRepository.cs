@@ -27,7 +27,7 @@ public class EleicaoRepository
     public Eleicao Patch(Eleicao eleicao)
     {
         _context.Eleicoes.Update(eleicao);
-        _context.Eleicoes.SaveChanges();
+        _context.SaveChanges();
         return GetById(eleicao.Id);
     }
 
