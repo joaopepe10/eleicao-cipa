@@ -3,7 +3,6 @@ using EleicaoCipa.Data.Dto.CandidatoDto.RequestDto;
 using EleicaoCipa.Data.Dto.EleicaoDto.RequestDto;
 using EleicaoCipa.Data.Dto.EleicaoDto.ResponseDto;
 using EleicaoCipa.Data.Repository;
-using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EleicaoCipa.Controller;
@@ -25,7 +24,7 @@ public class EleicaoController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { Id = responseDto.Id }, responseDto);
     }
 
-    [HttpPost]
+    [HttpPost("insere_candidato")]
     public IActionResult PostCondidato([FromBody] CreateCandidatoDto dto)
     {
         var resposnseCandidatoDto = _service.PostCandidato(dto);
