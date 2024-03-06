@@ -14,7 +14,7 @@ public class EleicaoRepository
 
     public Eleicao Post(Eleicao eleicao)
     {
-        _context.Add(eleicao);
+        _context.Eleicoes.Add(eleicao);
         _context.SaveChanges();
         return eleicao;
     }
@@ -26,8 +26,8 @@ public class EleicaoRepository
 
     public Eleicao Patch(Eleicao eleicao)
     {
-        _context.Update(eleicao);
-        _context.SaveChanges();
+        _context.Eleicoes.Update(eleicao);
+        _context.Eleicoes.SaveChanges();
         return GetById(eleicao.Id);
     }
 
