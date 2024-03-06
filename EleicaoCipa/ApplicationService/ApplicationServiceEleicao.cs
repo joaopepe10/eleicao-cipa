@@ -4,6 +4,7 @@ using EleicaoCipa.Data.Dto.CandidatoDto.ResponseDto;
 using EleicaoCipa.Data.Dto.EleicaoDto.RequestDto;
 using EleicaoCipa.Data.Dto.EleicaoDto.ResponseDto;
 using EleicaoCipa.Data.Repository;
+using EleicaoCipa.Enums;
 using EleicaoCipa.Model;
 
 namespace EleicaoCipa.ApplicationService;
@@ -38,7 +39,7 @@ public class ApplicationServiceEleicao
         return response;
     }
 
-    public ReadEleicaoDto? GetById(int id)
+    public ReadEleicaoDto GetById(int id)
     {
         var eleicao = _repository.GetById(id);
         if (eleicao == null) throw new ArgumentException($"Eleição com ID {id} inválido!");
@@ -51,16 +52,28 @@ public class ApplicationServiceEleicao
         return _mapper.Map<List<ReadEleicaoDto>>(_repository.GetAll());
     }
 
-    public ReadCandidatoDto PostCandidato(CreateCandidatoDto dto)
+    public ReadCandidatoDto PostCandidato(int eleicaoId, CreateCandidatoDto dto)
     {
-        if (existsCandidatoEmUmaEleicao(dto.EleicaoId, dto.UsuarioId)) throw new Exception($"Candidato com ID {dto.UsuarioId} já existente nesta eleição");
+        if(!IsEleicaoEncerrada(eleicaoId))
+            if (ExistsCandidatoEmUmaEleicao(eleicaoId, dto.UsuarioId))
+                throw new Exception($"Candidato com ID {dto.UsuarioId} já existente nesta eleição");
         var respondeCandidatoDto = _serviceCandidato.Post(dto);    
         return respondeCandidatoDto;
     }
 
-    bool existsCandidatoEmUmaEleicao(int eleicaoId,int usuarioId)
+    private bool IsEleicaoEncerrada(int eleicaoId)
     {
-        var eleicao = GetById(eleicaoId);
+        var eleicao = _repository.GetById(eleicaoId);
+        if (eleicao == null)
+            throw new Exception($"Eleição com ID {eleicaoId} inválido.");
+        if (eleicao.Status == StatusEnum.Encerrada)
+            throw new Exception("Eleição com status encerrada, não é possível inserir candidato");
+        return false;
+    }
+
+    bool ExistsCandidatoEmUmaEleicao(int eleicaoId, int usuarioId)
+    {
+        var eleicao = _repository.GetByIdEleicaoValida(eleicaoId);
         return eleicao.Candidatos
                             .Any(candidato => candidato.UsuarioId == usuarioId);
     }
