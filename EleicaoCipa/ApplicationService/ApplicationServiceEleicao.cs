@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using EleicaoCipa.Data.Dto.CandidatoDto.RequestDto;
+using EleicaoCipa.Data.Dto.CandidatoDto.ResponseDto;
 using EleicaoCipa.Data.Dto.EleicaoDto.RequestDto;
 using EleicaoCipa.Data.Dto.EleicaoDto.ResponseDto;
 using EleicaoCipa.Data.Repository;
@@ -10,10 +12,12 @@ public class ApplicationServiceEleicao
 {
     private IMapper _mapper;
     private EleicaoRepository _repository;
-    public ApplicationServiceEleicao(IMapper mapper, EleicaoRepository repository)
+    private ApplicationServiceCandidato _serviceCandidato;
+    public ApplicationServiceEleicao(IMapper mapper, EleicaoRepository repository, ApplicationServiceCandidato serviceCandidato)
     {
         _mapper = mapper;
         _repository = repository;
+        _serviceCandidato = serviceCandidato;
     }
 
     public ReadEleicaoDto Update<TDTO>(TDTO dto, int id)
@@ -25,7 +29,6 @@ public class ApplicationServiceEleicao
         return _mapper.Map<ReadEleicaoDto>(entity);
     }
    
-
     public ReadEleicaoDto Post(CreateEleicaoDto dto)
     {
         if (dto == null) throw new Exception("Dados para criação de eleição inválidos!");
@@ -46,5 +49,19 @@ public class ApplicationServiceEleicao
     public IEnumerable<ReadEleicaoDto> GetAll()
     {
         return _mapper.Map<List<ReadEleicaoDto>>(_repository.GetAll());
+    }
+
+    public ReadCandidatoDto PostCandidato(CreateCandidatoDto dto)
+    {
+        if (existsCandidatoEmUmaEleicao(dto.EleicaoId, dto.UsuarioId)) throw new Exception($"Candidato com ID {dto.UsuarioId} já existente nesta eleição");
+        var respondeCandidatoDto = _serviceCandidato.Post(dto);    
+        return respondeCandidatoDto;
+    }
+
+    bool existsCandidatoEmUmaEleicao(int eleicaoId,int usuarioId)
+    {
+        var eleicao = _repository.GetById(eleicaoId);
+        return eleicao.Candidatos
+                            .Any(candidato => candidato.UsuarioId == usuarioId);
     }
 }
