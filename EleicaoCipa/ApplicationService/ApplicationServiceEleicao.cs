@@ -41,7 +41,7 @@ public class ApplicationServiceEleicao
     public ReadEleicaoDto? GetById(int id)
     {
         var eleicao = _repository.GetById(id);
-        if (eleicao == null) return null;
+        if (eleicao == null) throw new ArgumentException($"Eleição com ID {id} inválido!");
         var dto = _mapper.Map<ReadEleicaoDto>(eleicao);
         return dto;
     }
@@ -60,7 +60,7 @@ public class ApplicationServiceEleicao
 
     bool existsCandidatoEmUmaEleicao(int eleicaoId,int usuarioId)
     {
-        var eleicao = _repository.GetById(eleicaoId);
+        var eleicao = GetById(eleicaoId);
         return eleicao.Candidatos
                             .Any(candidato => candidato.UsuarioId == usuarioId);
     }
