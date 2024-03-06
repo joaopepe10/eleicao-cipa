@@ -27,8 +27,15 @@ public class EleicaoController : ControllerBase
     [HttpPost("insere_candidato")]
     public IActionResult PostCondidato([FromBody] CreateCandidatoDto dto)
     {
-        var resposnseCandidatoDto = _service.PostCandidato(dto);
-        return Ok(resposnseCandidatoDto);
+        try
+        {
+            var resposnseCandidatoDto = _service.PostCandidato(dto);
+            return Ok(resposnseCandidatoDto);
+        }
+         catch (Exception ex)
+        {
+            return NotFound(ex.Message);
+        }
     }
 
     [HttpGet("{id}")]
