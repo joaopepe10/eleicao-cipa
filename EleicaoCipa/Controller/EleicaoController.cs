@@ -1,4 +1,5 @@
 ﻿using EleicaoCipa.ApplicationService;
+using EleicaoCipa.Data.Dto.CandidatoDto.RequestDto;
 using EleicaoCipa.Data.Dto.EleicaoDto.RequestDto;
 using EleicaoCipa.Data.Dto.EleicaoDto.ResponseDto;
 using EleicaoCipa.Data.Repository;
@@ -23,6 +24,14 @@ public class EleicaoController : ControllerBase
         var responseDto = _service.Post(dto);
         return CreatedAtAction(nameof(GetById), new { Id = responseDto.Id }, responseDto);
     }
+
+    [HttpPost]
+    public IActionResult PostCondidato([FromBody] CreateCandidatoDto dto)
+    {
+        var resposnseCandidatoDto = _service.PostCandidato(dto);
+        return Ok(resposnseCandidatoDto);
+    }
+
     [HttpGet("{id}")]
     public IActionResult GetById(int id)
     {
