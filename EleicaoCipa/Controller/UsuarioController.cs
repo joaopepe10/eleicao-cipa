@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using EleicaoCipa.ApplicationService;
 using EleicaoCipa.Data;
 using EleicaoCipa.Data.Dto.UsuarioDto.RequestDto;
 using EleicaoCipa.Data.Dto.UsuarioDto.ResponseDto;
@@ -10,40 +11,30 @@ namespace EleicaoCipa.Controller;
 [Route("[controller]")]
 public class UsuarioController : ControllerBase
 {
-    private EleicaoContext _context;
-    private IMapper _mapper;
-
-    public UsuarioController(EleicaoContext context, IMapper mapper)
+    private readonly ApplicationServiceUsuario _service;
+    public UsuarioController(ApplicationServiceUsuario service)
     {
-        _context = context;
-        _mapper = mapper;
+        _service = service;
     }
 
     [HttpPost]
     public IActionResult Post([FromBody] CreateUsuarioDto dto)
     {
-        var usuario = _mapper.Map<Usuario>(dto);
-        var readUsuario = _mapper.Map<ReadUsuarioDto>(usuario);
-        _context.Usuarios.Add(usuario);
-        _context.SaveChanges();
-        return CreatedAtAction(nameof(GetById), new { Id = usuario.Id }, readUsuario);
+        var responseDto = _service.Post(dto);
+        return CreatedAtAction(nameof(GetById), new { Id = responseDto.Id }, responseDto);
     }
 
     [HttpGet("{id}")]
     public IActionResult GetById(int id)
     {
-        var usuario = _context.Usuarios.FirstOrDefault(usuario => usuario.Id == id);
-        if (usuario == null) return NotFound();
-
-        var dto = _mapper.Map<ReadUsuarioDto>(usuario);
+        var dto = _service.GetById(id);
         return Ok(dto);
     }
 
     [HttpGet("candidatos")]
     public IEnumerable<ReadAllCandidatosDto> GetAllCandidatos()
     {
-        var candidatos = _mapper.Map<List<ReadAllCandidatosDto>>(_context.Usuarios.ToList());
-
+        var candidatos = _service.GetAllCandidato();
         return candidatos;
     }
 }
