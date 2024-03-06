@@ -6,11 +6,13 @@ namespace EleicaoCipa.Data.Repository;
 public class CandidatoRepository : ICandidatoRepository
 {
     private EleicaoContext _context;
+
     public CandidatoRepository(EleicaoContext context)
     {
 
         _context = context;
     }
+
     public Candidato Post(Candidato candidato)
     {
         _context.Candidatos.Add(candidato);
@@ -27,7 +29,6 @@ public class CandidatoRepository : ICandidatoRepository
     {
         return _context.Candidatos.FirstOrDefault(candidato => candidato.Id == id);
     }
-
 
     public Candidato Update(Candidato candidato)
     {

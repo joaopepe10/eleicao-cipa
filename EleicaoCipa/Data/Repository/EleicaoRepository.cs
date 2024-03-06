@@ -31,7 +31,7 @@ public class EleicaoRepository
         return GetById(eleicao.Id);
     }
 
-    public Eleicao GetById(int id) => _context.Eleicoes.FirstOrDefault(eleicao => eleicao.Id == id);
+    public Eleicao? GetById(int id) => _context.Eleicoes.FirstOrDefault(eleicao => eleicao.Id == id);
     // PERGUNTAR PQ DEU ERRO DE RETORNO QUANDO RETORNAVA SEM ATRIBUIR A VARIAVEL 
     public IEnumerable<Eleicao> GetAll()
     {
