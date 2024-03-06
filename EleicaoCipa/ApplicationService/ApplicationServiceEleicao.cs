@@ -73,7 +73,7 @@ public class ApplicationServiceEleicao
 
     bool ExistsCandidatoEmUmaEleicao(int eleicaoId, int usuarioId)
     {
-        var eleicao = _repository.GetByIdEleicaoValida(eleicaoId);
+        var eleicao = _repository.GetById(eleicaoId);
         return eleicao.Candidatos
                             .Any(candidato => candidato.UsuarioId == usuarioId);
     }

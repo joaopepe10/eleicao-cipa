@@ -26,13 +26,6 @@ public class EleicaoRepository
 
     public Eleicao? GetById(int id) => _context.Eleicoes.FirstOrDefault(eleicao => eleicao.Id == id);
 
-    public Eleicao? GetByIdEleicaoValida(int id)
-    {
-        var eleicaoValida = _context.Eleicoes
-            .FirstOrDefault(eleicao => eleicao.Equals(id) && eleicao.Status != Enums.StatusEnum.Encerrada);
-        return eleicaoValida;
-    }
-
     public IEnumerable<Eleicao> GetAll()
     {
         var eleicoes = _context.Eleicoes
