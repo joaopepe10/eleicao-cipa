@@ -1,42 +1,43 @@
-﻿using AutoMapper;
-using EleicaoCipa.Data.Dto.UsuarioDto;
-using EleicaoCipa.Data;
-using EleicaoCipa.Model;
-using Microsoft.AspNetCore.Mvc;
+﻿using EleicaoCipa.ApplicationService;
 using EleicaoCipa.Data.Dto.CandidatoDto.RequestDto;
 using EleicaoCipa.Data.Dto.CandidatoDto.ResponseDto;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EleicaoCipa.Controller;
 [ApiController]
 [Route("[controller]")]
 public class CandidatoController : ControllerBase
 {
-    private readonly EleicaoContext _context;
-    private readonly IMapper _mapper;
-
-    public CandidatoController(EleicaoContext context, IMapper mapper)
+    private readonly ApplicationServiceCandidato _service;
+    public CandidatoController(ApplicationServiceCandidato service)
     {
-        _context = context;
-        _mapper = mapper;
+        _service = service;
     }
 
     [HttpPost]
     public IActionResult Post([FromBody] CreateCandidatoDto dto)
     {
-        var candidato = _mapper.Map<Candidato>(dto);
-        var readCandidato = _mapper.Map<ReadCandidatoDto>(candidato);
-        _context.Candidatos.Add(candidato);
-        _context.SaveChanges();
-        return CreatedAtAction(nameof(GetById), new { Id = candidato.Id }, readCandidato);
+        var responseDto = _service.Post(dto);
+        return CreatedAtAction(nameof(GetById), new { responseDto.Id }, responseDto);
     }
 
     [HttpGet("{id}")]
     public IActionResult GetById(int id)
     {
-        var candidato = _context.Candidatos.FirstOrDefault(candidato => candidato.Id == id);
-        if (candidato == null) return NotFound();
+        try
+        {
+            var responseDto = _service.GetById(id);
+            return Ok(responseDto);
+        }
+        catch(ArgumentException e)
+        {
+            return NotFound(e.Message);
+        }
+    }
 
-        var dto = _mapper.Map<ReadCandidatoDto>(candidato);
-        return Ok(dto);
+    [HttpGet]
+    public IEnumerable<ReadCandidatoDto> GetAll()
+    {
+        return _service.GetAll();
     }
 }
