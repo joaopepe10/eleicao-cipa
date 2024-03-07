@@ -16,9 +16,10 @@ public class ApplicationServiceCandidato
         _repository = repository;
     }
 
-    public ReadCandidatoDto Post(CreateCandidatoDto dto)
+    public ReadCandidatoDto Post(CreateCandidatoDto dto, int eleicaoId)
     {
         var entity = _mapper.Map<Candidato>(dto);
+        entity.EleicaoId = eleicaoId;
         _repository.Post(entity);
         return _mapper.Map<ReadCandidatoDto>(entity);
     }
