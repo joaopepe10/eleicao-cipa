@@ -28,6 +28,14 @@ public class CandidatoController : ControllerBase
         }
     }
 
+    [HttpPut("{id}/altera_discurso")]
+    public IActionResult PutDiscurso(int id, UpdateDiscursoDto dto)
+    {
+        if (dto is null || dto.Discurso.Equals(string.Empty))
+            return NotFound("Não é possivel fazer alguma alteração com o discurso nulo ou vazio.");
+        return Ok(_service.PutDiscurso(id, dto));
+    }
+
     [HttpGet]
     public IEnumerable<ReadCandidatoDto> GetAll()
     {

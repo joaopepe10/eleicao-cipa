@@ -35,4 +35,13 @@ public class ApplicationServiceCandidato
     {
         return _mapper.Map<List<ReadCandidatoDto>>(_repository.GetAll());
     }
+
+    public ReadCandidatoDto PutDiscurso(int id, UpdateDiscursoDto dto)
+    {
+        var entity = _repository.GetById(id);
+        _mapper.Map(dto, entity);
+        Candidato entityAlterada = _repository.Update(entity);
+        var responseCandidato = _mapper.Map<ReadCandidatoDto>(entityAlterada);
+        return responseCandidato;
+    }
 }

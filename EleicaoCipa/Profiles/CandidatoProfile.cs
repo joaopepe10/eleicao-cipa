@@ -9,7 +9,8 @@ public class CandidatoProfile : Profile
 {
     public CandidatoProfile()
     {
-        CreateMap<CreateCandidatoDto, Candidato>();
-        CreateMap<Candidato, ReadCandidatoDto>();
+        CreateMap<CreateCandidatoDto, Candidato>().ReverseMap();
+        CreateMap<Candidato, ReadCandidatoDto>().ReverseMap();
+        CreateMap<UpdateDiscursoDto, Candidato>().ReverseMap();
     }
 }
