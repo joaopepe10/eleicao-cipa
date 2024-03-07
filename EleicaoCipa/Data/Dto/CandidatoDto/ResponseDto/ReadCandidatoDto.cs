@@ -8,4 +8,5 @@ public class ReadCandidatoDto
     public int UsuarioId { get; set; }
     public ReadUsuarioDto Usuario { get; set; }
     public string Discurso { get; set; }
+    public DateTime DataInscricao { get; set; }
 }
