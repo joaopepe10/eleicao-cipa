@@ -54,9 +54,9 @@ public class ApplicationServiceEleicao
 
     public ReadCandidatoDto PostCandidato(int eleicaoId, CreateCandidatoDto dto)
     {
-        if(!IsEleicaoEncerrada(eleicaoId))
-            if (ExistsCandidatoEmUmaEleicao(eleicaoId, dto.UsuarioId))
-                throw new Exception($"Candidato com ID {dto.UsuarioId} já existente nesta eleição");
+        if(!IsEleicaoEncerrada(eleicaoId) || ExistsCandidatoEmUmaEleicao(eleicaoId, dto.UsuarioId))
+            throw new Exception($"Candidato com ID {dto.UsuarioId} já existente nesta eleição");
+
         var respondeCandidatoDto = _serviceCandidato.Post(dto, eleicaoId);    
         return respondeCandidatoDto;
     }
