@@ -19,4 +19,5 @@ public class EleicaoContext : DbContext
     public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<Candidato> Candidatos { get; set; }
     public DbSet<Eleicao> Eleicoes { get; set; }
+    public DbSet<Voto> Votos { get; set; }
 }
