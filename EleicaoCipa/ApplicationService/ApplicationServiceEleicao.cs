@@ -11,9 +11,9 @@ namespace EleicaoCipa.ApplicationService;
 
 public class ApplicationServiceEleicao
 {
-    private IMapper _mapper;
-    private EleicaoRepository _repository;
-    private ApplicationServiceCandidato _serviceCandidato;
+    private readonly IMapper _mapper;
+    private readonly EleicaoRepository _repository;
+    private readonly ApplicationServiceCandidato _serviceCandidato;
     public ApplicationServiceEleicao(IMapper mapper, EleicaoRepository repository, ApplicationServiceCandidato serviceCandidato)
     {
         _mapper = mapper;
