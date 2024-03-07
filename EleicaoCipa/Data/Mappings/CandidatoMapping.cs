@@ -11,6 +11,12 @@ public class CandidatoMapping : IEntityTypeConfiguration<Candidato>
         builder
             .HasKey(candidato => candidato.Id);
 
+        builder.
+            Property(candidato => candidato.DataInscricao)
+            .HasColumnName("data_inscricao")
+            .HasColumnType("datetime")
+            .IsRequired();
+
         builder
             .Property(candidato => candidato.Discurso)
             .HasColumnType("text")
