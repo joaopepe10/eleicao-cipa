@@ -1,4 +1,5 @@
 ﻿using EleicaoCipa.ApplicationService;
+using EleicaoCipa.Data.Dto.VotoDto;
 using EleicaoCipa.Data.Dto.VotoDto.RequestDto;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,6 +22,7 @@ public class VotoController : ControllerBase
         var responseDto = _service.Post(dto);
         return CreatedAtAction(nameof(GetById), new { Id = responseDto.Id }, responseDto);
     }
+
     [HttpGet("{id}")]
     public IActionResult GetById(int id)
     {
@@ -32,5 +34,10 @@ public class VotoController : ControllerBase
         {
             return NotFound(ex.Message);
         }
+    }
+
+    public IEnumerable<ReadVotoDto> GetAll()
+    {
+        return _service.GetAll();
     }
 }
