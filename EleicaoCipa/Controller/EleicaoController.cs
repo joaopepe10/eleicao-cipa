@@ -32,7 +32,7 @@ public class EleicaoController : ControllerBase
         return Ok(dto);
     }
 
-    [HttpPost("{id}/insere_candidato")]
+    [HttpPost("{id}/insere-candidato")]
     public IActionResult PostCondidato(int id, [FromBody] CreateCandidatoDto dto)
     {
         try
