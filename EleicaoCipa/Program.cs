@@ -11,11 +11,13 @@ builder.Services.AddScoped<EleicaoContext>();
 builder.Services.AddScoped<EleicaoRepository>();
 builder.Services.AddScoped<CandidatoRepository>();
 builder.Services.AddScoped<UsuarioRepository>();
+builder.Services.AddScoped<VotoRepository>();
 
 // SERVICES
 builder.Services.AddScoped<ApplicationServiceEleicao>();
 builder.Services.AddScoped<ApplicationServiceCandidato>();
 builder.Services.AddScoped<ApplicationServiceUsuario>();
+builder.Services.AddScoped<ApplicationServiceVoto>();
 
 var connectionString = builder.Configuration.GetConnectionString("EleicaoConnection");
 builder.Services.AddDbContext<EleicaoContext>(opts => 
