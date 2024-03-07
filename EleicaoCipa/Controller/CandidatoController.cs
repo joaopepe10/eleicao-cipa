@@ -14,13 +14,6 @@ public class CandidatoController : ControllerBase
         _service = service;
     }
 
-    [HttpPost]
-    public IActionResult Post([FromBody] CreateCandidatoDto dto)
-    {
-        var responseDto = _service.Post(dto);
-        return CreatedAtAction(nameof(GetById), new { responseDto.Id }, responseDto);
-    }
-
     [HttpGet("{id}")]
     public IActionResult GetById(int id)
     {
