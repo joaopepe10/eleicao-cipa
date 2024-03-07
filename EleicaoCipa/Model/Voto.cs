@@ -3,9 +3,9 @@
 public class Voto
 {
     public int Id { get; set; }
+    public int UsuarioId { get; set; }
+    public virtual Usuario Usuario { get; set; }
     public int EleicaoId { get; set; }
-    public IEnumerable<Usuario> Eleitores { get; set; }
-    public int EleitorId { get; set; }
-    public int CandidatoId { get; set; }
+    public virtual Eleicao Eleicao { get; set; }
     public DateTime DataVoto { get; set; }
 }
