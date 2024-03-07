@@ -1,7 +1,6 @@
 ﻿namespace EleicaoCipa.Data.Dto.UsuarioDto.ResponseDto;
 
-public class ReadUsuarioDto
+public class ReadUsuarioDto : BaseDto
 {
-    public int Id { get; set; }
     public string Nome { get; set; }
 }

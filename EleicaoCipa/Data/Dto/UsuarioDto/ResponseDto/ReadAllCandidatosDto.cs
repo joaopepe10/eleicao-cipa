@@ -2,8 +2,10 @@
 
 namespace EleicaoCipa.Data.Dto.UsuarioDto.ResponseDto;
 
-public class ReadAllCandidatosDto
+    
+    
+    
+public class ReadAllCandidatosDto : BaseDto
 {
-    public int Id { get; set; }
-    public ICollection<ReadCandidatoDto> Candidatos { get; set; }
+    public ICollection<ReadCandidatoDto>? Candidatos { get; set; }
 }
