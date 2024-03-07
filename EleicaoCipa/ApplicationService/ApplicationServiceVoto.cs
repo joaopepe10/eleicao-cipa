@@ -30,4 +30,11 @@ public class ApplicationServiceVoto
         return _mapper.Map<List<ReadVotoDto>>(votos);
     }
 
+    public ReadVotoDto GetById(int id)
+    {
+        var entity = _repository.GetById(id);
+        if (entity == null) throw new Exception($"Usuário com ID {id} inválido.");
+        var responseDto = _mapper.Map<ReadVotoDto>(entity);
+        return responseDto;
+    }
 }
