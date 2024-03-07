@@ -3,6 +3,7 @@ using System;
 using EleicaoCipa.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EleicaoCipa.Migrations
 {
     [DbContext(typeof(EleicaoContext))]
-    partial class EleicaoContextModelSnapshot : ModelSnapshot
+    [Migration("20240307152202_VotoEleicao-OneToMany")]
+    partial class VotoEleicaoOneToMany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

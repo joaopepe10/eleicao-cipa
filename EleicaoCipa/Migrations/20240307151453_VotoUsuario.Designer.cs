@@ -3,6 +3,7 @@ using System;
 using EleicaoCipa.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EleicaoCipa.Migrations
 {
     [DbContext(typeof(EleicaoContext))]
-    partial class EleicaoContextModelSnapshot : ModelSnapshot
+    [Migration("20240307151453_VotoUsuario")]
+    partial class VotoUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -102,7 +104,7 @@ namespace EleicaoCipa.Migrations
                         .HasColumnType("datetime")
                         .HasColumnName("data_voto");
 
-                    b.Property<int>("EleicaoId")
+                    b.Property<int?>("EleicaoId")
                         .HasColumnType("int");
 
                     b.Property<int>("UsuarioId")
@@ -138,19 +140,15 @@ namespace EleicaoCipa.Migrations
 
             modelBuilder.Entity("EleicaoCipa.Model.Voto", b =>
                 {
-                    b.HasOne("EleicaoCipa.Model.Eleicao", "Eleicao")
+                    b.HasOne("EleicaoCipa.Model.Eleicao", null)
                         .WithMany("Votos")
-                        .HasForeignKey("EleicaoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EleicaoId");
 
                     b.HasOne("EleicaoCipa.Model.Usuario", "Usuario")
                         .WithMany("Votos")
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Eleicao");
 
                     b.Navigation("Usuario");
                 });
