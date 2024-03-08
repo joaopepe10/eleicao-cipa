@@ -12,6 +12,7 @@ public class CandidatoProfile : Profile
         CreateMap<CreateCandidatoDto, Candidato>().ReverseMap();
         CreateMap<Candidato, ReadCandidatoDto>()
             .ForMember(dto => dto.QuantidadeDeVotos, opts => opts.MapFrom(entidade => entidade.Votos.Count()))
+            .ForMember(dto => dto.NomeCandidato, opts => opts.MapFrom(entidade => entidade.Usuario.Nome))
             .ReverseMap();            
         CreateMap<UpdateDiscursoDto, Candidato>().ReverseMap();
     }
