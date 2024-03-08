@@ -15,6 +15,7 @@ public class VotoMapping : IEntityTypeConfiguration<Voto>
             .Property(voto => voto.DataVoto)
             .HasColumnName("data_voto")
             .HasColumnType("datetime")
+            .HasDefaultValueSql("now()")
             .IsRequired();
 
         builder
@@ -26,5 +27,6 @@ public class VotoMapping : IEntityTypeConfiguration<Voto>
             .HasOne(voto => voto.Eleicao)
             .WithMany(eleicao => eleicao.Votos)
             .HasForeignKey(voto => voto.EleicaoId);
+
     }
 }

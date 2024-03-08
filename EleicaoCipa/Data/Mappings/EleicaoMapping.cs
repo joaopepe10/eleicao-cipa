@@ -33,5 +33,6 @@ public class EleicaoMapping : IEntityTypeConfiguration<Eleicao>
             .HasMany(eleicao => eleicao.Candidatos)
             .WithOne(candidato => candidato.Eleicao)
             .HasForeignKey(candidato => candidato.EleicaoId);
+
     }
 }
