@@ -33,7 +33,6 @@ public class ApplicationServiceEleicao
    
     public ReadEleicaoDto Post(CreateEleicaoDto dto)
     {
-        if (dto == null) throw new Exception("Dados para criação de eleição inválidos!");
         var entity = _mapper.Map<Eleicao>(dto);
         _repository.Post(entity);
         var response = _mapper.Map<ReadEleicaoDto>(entity);
@@ -42,8 +41,7 @@ public class ApplicationServiceEleicao
 
     public ReadEleicaoDto GetById(int id)
     {
-        var eleicao = _repository.GetById(id);
-        if (eleicao == null) throw new ArgumentException($"Eleição com ID {id} inválido!");
+        var eleicao = GetEleicaoById(id);
         var dto = _mapper.Map<ReadEleicaoDto>(eleicao);
         return dto;
     }
@@ -74,8 +72,16 @@ public class ApplicationServiceEleicao
 
     bool ExistsCandidatoEmUmaEleicao(int eleicaoId, int usuarioId)
     {
-        var eleicao = _repository.GetById(eleicaoId);
+        var eleicao = GetEleicaoById(eleicaoId);
         return eleicao.Candidatos
                             .Any(candidato => candidato.UsuarioId == usuarioId);
+    }
+
+    private Eleicao GetEleicaoById(int id)
+    {
+        var eleicao = _repository.GetById(id);
+        if (eleicao is null)
+            throw new Exception($"Eleição com ID {id} inválido.");
+        return eleicao;
     }
 }
