@@ -21,11 +21,12 @@ public class ApplicationServiceEleicao
         _serviceCandidato = serviceCandidato;
     }
 
-    public ReadEleicaoDto Update<TDTO>(TDTO dto, int id)
+    public ReadEleicaoDto Update(UpdateStatusEleicaoDto dto, int id)
     {
         var entity = _repository.GetById(id);
-        if (entity == null) throw new Exception("Id de eleição inválido!");        
-        _mapper.Map(dto, entity);
+        if (entity == null)
+            throw new Exception("Id de eleição inválido!");
+        entity.Status = dto.Status;
         _repository.Update(entity);
         return _mapper.Map<ReadEleicaoDto>(entity);
     }
