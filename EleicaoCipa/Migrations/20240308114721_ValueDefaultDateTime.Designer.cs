@@ -3,6 +3,7 @@ using System;
 using EleicaoCipa.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EleicaoCipa.Migrations
 {
     [DbContext(typeof(EleicaoContext))]
-    partial class EleicaoContextModelSnapshot : ModelSnapshot
+    [Migration("20240308114721_ValueDefaultDateTime")]
+    partial class ValueDefaultDateTime
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,7 +47,7 @@ namespace EleicaoCipa.Migrations
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable("Candidatos", (string)null);
+                    b.ToTable("Candidatos");
                 });
 
             modelBuilder.Entity("EleicaoCipa.Model.Eleicao", b =>
@@ -71,7 +73,7 @@ namespace EleicaoCipa.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Eleicoes", (string)null);
+                    b.ToTable("Eleicoes");
                 });
 
             modelBuilder.Entity("EleicaoCipa.Model.Usuario", b =>
@@ -89,7 +91,7 @@ namespace EleicaoCipa.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Usuarios", (string)null);
+                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("EleicaoCipa.Model.Voto", b =>
@@ -121,7 +123,7 @@ namespace EleicaoCipa.Migrations
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable("Votos", (string)null);
+                    b.ToTable("Votos");
                 });
 
             modelBuilder.Entity("EleicaoCipa.Model.Candidato", b =>
