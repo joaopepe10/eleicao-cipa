@@ -7,5 +7,7 @@ public class Voto
     public virtual Usuario Usuario { get; set; }
     public int EleicaoId { get; set; }
     public virtual Eleicao Eleicao { get; set; }
-    public DateTime DataVoto { get; set; } = DateTime.Now;
+    public int CandidatoId { get; set; }
+    public virtual Candidato Candidato { get; set; }
+    public DateTime DataVoto { get; set; }
 }
