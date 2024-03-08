@@ -19,16 +19,13 @@ public class ApplicationServiceVoto
 
     public ReadVotoDto Post(CreateVotoDto dto)
     {
+        if (ExistsVotoDuplicado(dto.UsuarioId, dto.EleicaoId))
+            throw new Exception("Não foi possível registrar este voto.");
         var entity = _mapper.Map<Voto>(dto);
         _repository.Post(entity);
         return _mapper.Map<ReadVotoDto>(entity);
     }
 
-    public IEnumerable<ReadVotoDto> GetAll()
-    {
-        var votos = _repository.GetAll();
-        return _mapper.Map<List<ReadVotoDto>>(votos);
-    }
 
     public ReadVotoDto GetById(int id)
     {
@@ -36,5 +33,12 @@ public class ApplicationServiceVoto
         if (entity == null) throw new Exception($"Usuário com ID {id} inválido.");
         var responseDto = _mapper.Map<ReadVotoDto>(entity);
         return responseDto;
+    }
+
+    private bool ExistsVotoDuplicado(int usuarioId, int eleicaoId)
+    {
+        var votos = _repository.GetAll();
+        return votos
+            .Any(voto => voto.EleicaoId == eleicaoId && voto.UsuarioId == usuarioId);
     }
 }
