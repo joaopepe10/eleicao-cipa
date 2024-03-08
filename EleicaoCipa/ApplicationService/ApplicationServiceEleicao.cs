@@ -6,6 +6,7 @@ using EleicaoCipa.Data.Dto.EleicaoDto.ResponseDto;
 using EleicaoCipa.Data.Repository;
 using EleicaoCipa.Enums;
 using EleicaoCipa.Model;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EleicaoCipa.ApplicationService;
 
@@ -83,5 +84,11 @@ public class ApplicationServiceEleicao
         if (eleicao is null)
             throw new Exception($"Eleição com ID {id} inválido.");
         return eleicao;
+    }
+
+    public IEnumerable<ReadResultadoEleicaoDto> GetResultado()
+    {
+        var resultados = _mapper.Map<List<ReadResultadoEleicaoDto>>(_repository.GetAll());
+        return resultados;
     }
 }
