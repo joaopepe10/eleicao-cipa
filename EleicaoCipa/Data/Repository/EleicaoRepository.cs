@@ -18,9 +18,9 @@ public class EleicaoRepository
         _context.SaveChanges();
         return eleicao;
     }
-    public void Update<T>(T dto)
+    public void Update(Eleicao entity)
     {        
-        _context.Update(dto);
+        _context.Update(entity);
         _context.SaveChanges();
     }    
 
