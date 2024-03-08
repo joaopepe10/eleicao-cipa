@@ -12,6 +12,9 @@ public class UsuarioProfile : Profile
         CreateMap<CreateUsuarioDto, Usuario>().ReverseMap();
         CreateMap<Usuario, ReadUsuarioDto>().ReverseMap();
         CreateMap<UpdateUsuarioDto, Usuario>().ReverseMap();
-        CreateMap<Usuario, ReadAllCandidatosDto>().ReverseMap();
+        CreateMap<Usuario, ReadAllCandidatosDto>()
+            .ForMember(dto => dto.CandidaturasDoUsuario, opts => opts.MapFrom(entidade => entidade.Candidatos))
+            .ForMember(dto => dto.Nome, opts => opts.MapFrom(entidade => entidade.Nome))
+            .ReverseMap();
     }
 }
