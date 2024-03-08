@@ -46,6 +46,14 @@ public class EleicaoController : ControllerBase
         }
     }
 
+    [HttpPut("{id}/altera-status")]
+    public IActionResult Put(int id, [FromBody] UpdateStatusEleicaoDto dto)
+    {
+        if(dto is null) return NotFound("Favor preencer o campo de status.");
+        var responseDto = _service.Update(dto, id);
+        return Ok(responseDto);
+    }
+
     [HttpGet]
     public IEnumerable<ReadEleicaoDto> GetAll()
     {
