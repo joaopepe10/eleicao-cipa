@@ -61,4 +61,10 @@ public class EleicaoController : ControllerBase
     {
         return _service.GetAll();
     }
+
+    [HttpGet("resultado")]
+    public IEnumerable<ReadResultadoEleicaoDto> GetResultado()
+    {
+        return _service.GetResultado();
+    }
 }
