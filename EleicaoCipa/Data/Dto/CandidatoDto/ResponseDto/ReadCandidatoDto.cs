@@ -8,4 +8,5 @@ public class ReadCandidatoDto : BaseDto
     public ReadUsuarioDto Usuario { get; set; }
     public string Discurso { get; set; }
     public DateTime DataInscricao { get; set; }
+    public int QuantidadeDeVotos { get; set; }
 }
