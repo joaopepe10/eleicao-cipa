@@ -19,8 +19,14 @@ public class VotoController : ControllerBase
     public IActionResult Post(CreateVotoDto dto)
     {
         if (dto == null) return NotFound();
-        var responseDto = _service.Post(dto);
-        return CreatedAtAction(nameof(GetById), new { Id = responseDto.Id }, responseDto);
+        try
+        {
+            var responseDto = _service.Post(dto);
+            return CreatedAtAction(nameof(GetById), new { responseDto.Id }, responseDto);
+        }catch (Exception ex)
+        {
+            return NotFound(ex.Message);
+        }
     }
 
     [HttpGet("{id}")]
