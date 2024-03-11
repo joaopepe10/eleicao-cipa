@@ -91,4 +91,16 @@ public class ApplicationServiceEleicao
         var resultados = _mapper.Map<List<ReadResultadoEleicaoDto>>(_repository.GetAll());
         return resultados;
     }
+
+    private void VerificaEEncerraEleicaoSeAtingiuDataFim(int idEleicao)
+    {
+        var eleicao = GetEleicaoById(idEleicao);
+        var dataFim = eleicao.DataFim;
+        if (DateTime.Now >= dataFim)
+        {
+            eleicao.Status = StatusEnum.Encerrada;
+            _repository.Update(eleicao);
+            throw new Exception($"Data fim {dataFim} da eleição superior a data atual {DateTime.Now}, portanto eleição encerrada.");
+        }
+    }
 }
