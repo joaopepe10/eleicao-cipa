@@ -67,7 +67,7 @@ public class ApplicationServiceEleicao
                             .Any(candidato => candidato.UsuarioId == usuarioId);
     }
 
-    private Eleicao GetEleicaoById(int id)
+    public Eleicao GetEleicaoById(int id)
     {
         var eleicao = _repository.GetById(id);
         return eleicao is null 
