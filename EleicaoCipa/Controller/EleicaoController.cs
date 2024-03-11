@@ -22,8 +22,14 @@ public class EleicaoController : ControllerBase
     {
         if (dto is null)
             return NotFound("Não foi possível criar uma nova eleição, preencha todos os campos.");
-        var responseDto = _service.Post(dto);
-        return CreatedAtAction(nameof(GetById), new { Id = responseDto.Id }, responseDto);
+        try
+        {
+            var responseDto = _service.Post(dto);
+            return CreatedAtAction(nameof(GetById), new { responseDto.Id }, responseDto);
+        }catch (Exception ex)
+        {
+            return NotFound(ex.Message);
+        }
     }
     
     [HttpGet("{id}")]
