@@ -80,9 +80,9 @@ public class ApplicationServiceEleicao
     private Eleicao GetEleicaoById(int id)
     {
         var eleicao = _repository.GetById(id);
-        if (eleicao is null)
-            throw new Exception($"Eleição com ID {id} inválido.");
-        return eleicao;
+        return eleicao is null 
+            ? throw new Exception($"Eleição com ID {id} inválido.") 
+            : eleicao;
     }
 
     public IEnumerable<ReadResultadoEleicaoDto> GetResultado()
