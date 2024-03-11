@@ -67,4 +67,10 @@ public class EleicaoController : ControllerBase
     {
         return _service.GetResultado();
     }
+
+    [HttpGet("{id}/resultado")]
+    public IActionResult GetEleicaoResultadoById(int id) 
+    {
+        return Ok(_service.GetEleicaoResultadoById(id));
+    }
 }

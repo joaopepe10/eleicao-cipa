@@ -93,4 +93,10 @@ public class ApplicationServiceEleicao
         }
         return false;
     }
+
+    public ReadResultadoEleicaoDto? GetEleicaoResultadoById(int id)
+    {
+        var eleicao = GetEleicaoById(id);
+        return _mapper.Map<ReadResultadoEleicaoDto>(eleicao);
+    }
 }
