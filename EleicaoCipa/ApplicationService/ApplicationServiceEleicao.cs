@@ -33,6 +33,7 @@ public class ApplicationServiceEleicao
    
     public ReadEleicaoDto Post(CreateEleicaoDto dto)
     {
+        ValidaCriacaoDeEleicao(dto);
         var entity = _mapper.Map<Eleicao>(dto);
         _repository.Post(entity);
         var response = _mapper.Map<ReadEleicaoDto>(entity);
@@ -98,5 +99,14 @@ public class ApplicationServiceEleicao
     {
         var eleicao = GetEleicaoById(id);
         return _mapper.Map<ReadResultadoEleicaoDto>(eleicao);
+    }
+
+    public void ValidaCriacaoDeEleicao(CreateEleicaoDto dto)
+    {
+        if (dto.DataFim <= dto.DataInicio)
+            throw new Exception($"Não é possível criar uma eleição com a data fim {dto.DataFim} sendo maior que a data de início {dto.DataInicio}");
+        if (dto.DataInicio < DateTime.Now)
+            throw new Exception($"Data de início {dto.DataInicio} da eleição deve ser maior que a data atual {DateTime.Now}");
+        
     }
 }
