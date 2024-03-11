@@ -22,11 +22,10 @@ public class ApplicationServiceEleicao
         _serviceCandidato = serviceCandidato;
     }
 
-    public ReadEleicaoDto Update(UpdateStatusEleicaoDto dto, int id)
+    public ReadEleicaoDto Update(UpdateStatusEleicaoDto dto, int eleicaoId)
     {
-        var entity = _repository.GetById(id);
-        if (entity == null)
-            throw new Exception("Id de eleição inválido!");
+        VerificaEEncerraEleicaoSeAtingiuDataFim(eleicaoId);
+        var entity = GetEleicaoById(eleicaoId);
         entity.Status = dto.Status;
         _repository.Update(entity);
         return _mapper.Map<ReadEleicaoDto>(entity);
@@ -54,7 +53,7 @@ public class ApplicationServiceEleicao
 
     public ReadCandidatoDto PostCandidato(int eleicaoId, CreateCandidatoDto dto)
     {
-        if(IsEleicaoEncerrada(eleicaoId) || ExistsCandidatoEmUmaEleicao(eleicaoId, dto.UsuarioId))
+        if(VerificaEEncerraEleicaoSeAtingiuDataFim(eleicaoId) || ExistsCandidatoEmUmaEleicao(eleicaoId, dto.UsuarioId))
             throw new Exception($"Candidato com ID {dto.UsuarioId} já existente nesta eleição");
 
         var respondeCandidatoDto = _serviceCandidato.Post(dto, eleicaoId);    
