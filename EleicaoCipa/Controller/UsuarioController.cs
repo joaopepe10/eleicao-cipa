@@ -20,8 +20,9 @@ public class UsuarioController : ControllerBase
     [HttpPost]
     public IActionResult Post([FromBody] CreateUsuarioDto dto)
     {
+        if(dto is null) return NotFound("Dado para criação de usuário inválidos.");
         var responseDto = _service.Post(dto);
-        return CreatedAtAction(nameof(GetById), new { Id = responseDto.Id }, responseDto);
+        return CreatedAtAction(nameof(GetById), new { responseDto.Id }, responseDto);
     }
 
     [HttpGet("{id}")]

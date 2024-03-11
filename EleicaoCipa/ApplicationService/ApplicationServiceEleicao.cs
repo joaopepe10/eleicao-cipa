@@ -107,6 +107,5 @@ public class ApplicationServiceEleicao
             throw new Exception($"Não é possível criar uma eleição com a data fim {dto.DataFim} sendo maior que a data de início {dto.DataInicio}");
         if (dto.DataInicio < DateTime.Now)
             throw new Exception($"Data de início {dto.DataInicio} da eleição deve ser maior que a data atual {DateTime.Now}");
-        
     }
 }

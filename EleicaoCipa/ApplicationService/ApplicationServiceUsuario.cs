@@ -22,7 +22,6 @@ public class ApplicationServiceUsuario
 
     public ReadUsuarioDto Post(CreateUsuarioDto dto)
     {
-        if (dto == null) throw new Exception("Dados para criação de usuário inválidos!");
         var entity = _mapper.Map<Usuario>(dto);
         _repository.Post(entity);
         var responseDto = _mapper.Map<ReadUsuarioDto>(entity);
