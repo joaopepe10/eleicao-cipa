@@ -92,7 +92,7 @@ public class ApplicationServiceEleicao
         return resultados;
     }
 
-    private void VerificaEEncerraEleicaoSeAtingiuDataFim(int idEleicao)
+    private bool VerificaEEncerraEleicaoSeAtingiuDataFim(int idEleicao)
     {
         var eleicao = GetEleicaoById(idEleicao);
         var dataFim = eleicao.DataFim;
@@ -102,5 +102,6 @@ public class ApplicationServiceEleicao
             _repository.Update(eleicao);
             throw new Exception($"Data fim {dataFim} da eleição superior a data atual {DateTime.Now}, portanto eleição encerrada.");
         }
+        return false;
     }
 }
