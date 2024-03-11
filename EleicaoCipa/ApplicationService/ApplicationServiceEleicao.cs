@@ -60,16 +60,6 @@ public class ApplicationServiceEleicao
         return respondeCandidatoDto;
     }
 
-    private bool IsEleicaoEncerrada(int eleicaoId)
-    {
-        var eleicao = _repository.GetById(eleicaoId);
-        if (eleicao == null)
-            throw new Exception($"Eleição com ID {eleicaoId} inválido.");
-        if (eleicao.Status == StatusEnum.Encerrada)
-            throw new Exception("Eleição com status encerrada, não é possível inserir candidato");
-        return false;
-    }
-
     bool ExistsCandidatoEmUmaEleicao(int eleicaoId, int usuarioId)
     {
         var eleicao = GetEleicaoById(eleicaoId);
