@@ -31,6 +31,12 @@ public class UsuarioController : ControllerBase
         return Ok(dto);
     }
 
+    [HttpGet]
+    public IEnumerable<ReadUsuarioDto> GetAll()
+    {
+        return _service.GetAll();
+    }
+
     [HttpGet("candidatos")]
     public IEnumerable<ReadAllCandidatosDto> GetAllCandidatos()
     {
