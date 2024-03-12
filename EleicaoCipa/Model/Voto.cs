@@ -1,8 +1,7 @@
 ﻿namespace EleicaoCipa.Model;
 
-public class Voto
+public class Voto : BaseEntity
 {
-    public int Id { get; set; }
     public int UsuarioId { get; set; }
     public virtual Usuario Usuario { get; set; }
     public int EleicaoId { get; set; }

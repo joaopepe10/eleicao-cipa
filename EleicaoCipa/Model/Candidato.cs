@@ -3,9 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EleicaoCipa.Model;
 
-public class Candidato
+public class Candidato : BaseEntity
 {    
-    public int Id { get; set; }
     public int UsuarioId { get; set; }
     public virtual Usuario Usuario { get; set; }
     public virtual Eleicao Eleicao { get; set; }

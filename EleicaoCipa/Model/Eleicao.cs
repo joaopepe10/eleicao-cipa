@@ -2,9 +2,8 @@
 
 namespace EleicaoCipa.Model;
 
-public class Eleicao
+public class Eleicao : BaseEntity
 {
-    public int Id { get; set; }
     public DateTime DataInicio { get; set; }
     public DateTime DataFim { get; set; }
     public StatusEnum Status { get; set; } = 0;
