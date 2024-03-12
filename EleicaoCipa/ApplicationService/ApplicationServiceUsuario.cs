@@ -4,7 +4,7 @@ using EleicaoCipa.Data.Dto.UsuarioDto.RequestDto;
 using EleicaoCipa.Data.Dto.UsuarioDto.ResponseDto;
 using EleicaoCipa.Data.Repository;
 using EleicaoCipa.Data.Repository.Interface;
-using EleicaoCipa.Model;
+using EleicaoCipa.Dominio.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace EleicaoCipa.ApplicationService;

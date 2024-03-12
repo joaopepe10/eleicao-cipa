@@ -4,8 +4,8 @@ using EleicaoCipa.Data.Dto.CandidatoDto.ResponseDto;
 using EleicaoCipa.Data.Dto.EleicaoDto.RequestDto;
 using EleicaoCipa.Data.Dto.EleicaoDto.ResponseDto;
 using EleicaoCipa.Data.Repository;
+using EleicaoCipa.Dominio.Model;
 using EleicaoCipa.Enums;
-using EleicaoCipa.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EleicaoCipa.ApplicationService;

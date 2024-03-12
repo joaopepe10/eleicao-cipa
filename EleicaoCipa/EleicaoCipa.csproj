@@ -23,10 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Data\Repository\Interface\" />
     <Folder Include="Dominio\" />
     <Folder Include="Infraestrutura\" />
     <Folder Include="Aplicacao\" />
-    <Folder Include="Apresentacao\" />
   </ItemGroup>
 
 </Project>

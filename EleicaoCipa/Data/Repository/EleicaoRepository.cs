@@ -1,4 +1,4 @@
-﻿using EleicaoCipa.Model;
+﻿using EleicaoCipa.Dominio.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace EleicaoCipa.Data.Repository;

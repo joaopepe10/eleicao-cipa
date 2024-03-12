@@ -1,5 +1,5 @@
 ﻿using EleicaoCipa.Data.Configurations;
-using EleicaoCipa.Model;
+using EleicaoCipa.Dominio.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace EleicaoCipa.Data;

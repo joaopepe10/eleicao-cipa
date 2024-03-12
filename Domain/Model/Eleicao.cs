@@ -1,6 +1,6 @@
-﻿using EleicaoCipa.Enums;
+﻿using Dominio.Domain.Enums;
 
-namespace EleicaoCipa.Model;
+namespace Dominio.Domain.Model;
 
 public class Eleicao : BaseEntity
 {
@@ -11,3 +11,4 @@ public class Eleicao : BaseEntity
     public virtual IEnumerable<Candidato>? Candidatos { get; set; }
     public virtual IEnumerable<Voto>? Votos { get; set; }
 }
+

@@ -3,7 +3,7 @@ using Castle.Core.Internal;
 using EleicaoCipa.Data.Dto.VotoDto;
 using EleicaoCipa.Data.Dto.VotoDto.RequestDto;
 using EleicaoCipa.Data.Repository;
-using EleicaoCipa.Model;
+using EleicaoCipa.Dominio.Model;
 
 namespace EleicaoCipa.ApplicationService;
 

@@ -1,5 +1,5 @@
 ﻿using EleicaoCipa.Data.Repository.Interface;
-using EleicaoCipa.Model;
+using EleicaoCipa.Dominio.Model;
 
 namespace EleicaoCipa.Data.Repository;
 

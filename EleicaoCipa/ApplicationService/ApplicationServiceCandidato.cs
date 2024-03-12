@@ -2,7 +2,7 @@
 using EleicaoCipa.Data.Dto.CandidatoDto.RequestDto;
 using EleicaoCipa.Data.Dto.CandidatoDto.ResponseDto;
 using EleicaoCipa.Data.Repository;
-using EleicaoCipa.Model;
+using EleicaoCipa.Dominio.Model;
 
 namespace EleicaoCipa.ApplicationService;
 

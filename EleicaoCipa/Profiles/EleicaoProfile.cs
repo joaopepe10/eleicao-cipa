@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using EleicaoCipa.Data.Dto.EleicaoDto.RequestDto;
 using EleicaoCipa.Data.Dto.EleicaoDto.ResponseDto;
+using EleicaoCipa.Dominio.Model;
 using EleicaoCipa.Enums;
-using EleicaoCipa.Model;
 
 namespace EleicaoCipa.Profiles;
 
