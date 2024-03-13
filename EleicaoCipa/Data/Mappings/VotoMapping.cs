@@ -1,8 +1,8 @@
-﻿using EleicaoCipa.Dominio.Model;
+﻿using EleicaoCipa.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace EleicaoCipa.Data.Mappings;
+namespace EleicaoCipaVotacao.Data.Mappings;
 
 public class VotoMapping : IEntityTypeConfiguration<Voto>
 {
