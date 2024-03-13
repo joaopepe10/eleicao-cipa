@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using Castle.Core.Internal;
-using EleicaoCipa.Data.Dto.VotoDto;
-using EleicaoCipa.Data.Dto.VotoDto.RequestDto;
-using EleicaoCipa.Data.Repository;
-using EleicaoCipa.Dominio.Model;
+using EleicaoCipa.Domain.Model;
+using EleicaoCipaVotacao.Data.Dto.VotoDto.RequestDto;
+using EleicaoCipaVotacao.Data.Dto.VotoDto.ResponseDto;
+using EleicaoCipaVotacao.Data.Repository;
 
-namespace EleicaoCipa.ApplicationService;
+namespace EleicaoCipaVotacao.ApplicationService;
 
 public class ApplicationServiceVoto
 {
@@ -13,7 +13,7 @@ public class ApplicationServiceVoto
     private readonly IMapper _mapper;
     private readonly ApplicationServiceEleicao _serviceEleicao;
 
-    public ApplicationServiceVoto(VotoRepository repository,IMapper mapper, ApplicationServiceEleicao serviceEleicao)
+    public ApplicationServiceVoto(VotoRepository repository, IMapper mapper, ApplicationServiceEleicao serviceEleicao)
     {
         _repository = repository;
         _mapper = mapper;

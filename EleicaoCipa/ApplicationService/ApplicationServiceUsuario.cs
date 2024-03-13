@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
-using EleicaoCipa.Data.Dto.CandidatoDto.RequestDto;
-using EleicaoCipa.Data.Dto.UsuarioDto.RequestDto;
-using EleicaoCipa.Data.Dto.UsuarioDto.ResponseDto;
-using EleicaoCipa.Data.Repository;
-using EleicaoCipa.Data.Repository.Interface;
-using EleicaoCipa.Dominio.Model;
-using Microsoft.EntityFrameworkCore;
+using EleicaoCipa.Domain.Model;
+using EleicaoCipaVotacao.Data.Dto.UsuarioDto.RequestDto;
+using EleicaoCipaVotacao.Data.Dto.UsuarioDto.ResponseDto;
+using EleicaoCipaVotacao.Data.Repository;
 
-namespace EleicaoCipa.ApplicationService;
+namespace EleicaoCipaVotacao.ApplicationService;
 
 public class ApplicationServiceUsuario
 {
@@ -17,7 +14,7 @@ public class ApplicationServiceUsuario
     public ApplicationServiceUsuario(IMapper mapper, UsuarioRepository repository)
     {
         _mapper = mapper;
-        _repository = repository;   
+        _repository = repository;
     }
 
     public ReadUsuarioDto Post(CreateUsuarioDto dto)
@@ -31,9 +28,9 @@ public class ApplicationServiceUsuario
     public ReadUsuarioDto GetById(int id)
     {
         var entity = _repository.GetById(id);
-        if (entity == null) throw new Exception($"Usuário com ID {id} inválido.");
+        if (entity is null) throw new Exception($"Usuário com ID {id} inválido.");
         var responseDto = _mapper.Map<ReadUsuarioDto>(entity);
-       return responseDto;
+        return responseDto;
     }
 
     public IEnumerable<ReadUsuarioDto> GetAll()

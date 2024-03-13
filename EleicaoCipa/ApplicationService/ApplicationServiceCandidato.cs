@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using EleicaoCipa.Data.Dto.CandidatoDto.RequestDto;
-using EleicaoCipa.Data.Dto.CandidatoDto.ResponseDto;
-using EleicaoCipa.Data.Repository;
-using EleicaoCipa.Dominio.Model;
+using EleicaoCipa.Domain.Model;
+using EleicaoCipaVotacao.Data.Dto.CandidatoDto.RequestDto;
+using EleicaoCipaVotacao.Data.Dto.CandidatoDto.ResponseDto;
+using EleicaoCipaVotacao.Data.Repository;
 
-namespace EleicaoCipa.ApplicationService;
+namespace EleicaoCipaVotacao.ApplicationService;
 
 public class ApplicationServiceCandidato
 {

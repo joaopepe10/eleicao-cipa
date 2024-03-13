@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
-using EleicaoCipa.Data.Dto.CandidatoDto.RequestDto;
-using EleicaoCipa.Data.Dto.CandidatoDto.ResponseDto;
-using EleicaoCipa.Data.Dto.EleicaoDto.RequestDto;
-using EleicaoCipa.Data.Dto.EleicaoDto.ResponseDto;
-using EleicaoCipa.Data.Repository;
-using EleicaoCipa.Dominio.Model;
-using EleicaoCipa.Enums;
+using EleicaoCipa.Domain.Model;
+using EleicaoCipa.Domain.Enums;
 using Microsoft.AspNetCore.Mvc;
+using EleicaoCipaVotacao.Data.Dto.EleicaoDto.ResponseDto;
+using EleicaoCipaVotacao.Data.Dto.EleicaoDto.RequestDto;
+using EleicaoCipaVotacao.Data.Dto.CandidatoDto.ResponseDto;
+using EleicaoCipaVotacao.Data.Dto.CandidatoDto.RequestDto;
+using EleicaoCipaVotacao.Data.Repository;
 
-namespace EleicaoCipa.ApplicationService;
+namespace EleicaoCipaVotacao.ApplicationService;
 
 public class ApplicationServiceEleicao
 {
@@ -30,7 +30,7 @@ public class ApplicationServiceEleicao
         _repository.Update(entity);
         return _mapper.Map<ReadEleicaoDto>(entity);
     }
-   
+
     public ReadEleicaoDto Post(CreateEleicaoDto dto)
     {
         ValidaCriacaoDeEleicao(dto);
@@ -54,10 +54,10 @@ public class ApplicationServiceEleicao
 
     public ReadCandidatoDto PostCandidato(int eleicaoId, CreateCandidatoDto dto)
     {
-        if(VerificaEEncerraEleicaoSeAtingiuDataFim(eleicaoId) || ExistsCandidatoEmUmaEleicao(eleicaoId, dto.UsuarioId))
+        if (VerificaEEncerraEleicaoSeAtingiuDataFim(eleicaoId) || ExistsCandidatoEmUmaEleicao(eleicaoId, dto.UsuarioId))
             throw new Exception($"Candidato com ID {dto.UsuarioId} já existente nesta eleição");
 
-        var respondeCandidatoDto = _serviceCandidato.Post(dto, eleicaoId);    
+        var respondeCandidatoDto = _serviceCandidato.Post(dto, eleicaoId);
         return respondeCandidatoDto;
     }
 
@@ -71,8 +71,8 @@ public class ApplicationServiceEleicao
     public Eleicao GetEleicaoById(int id)
     {
         var eleicao = _repository.GetById(id);
-        return eleicao is null 
-            ? throw new Exception($"Eleição com ID {id} inválido.") 
+        return eleicao is null
+            ? throw new Exception($"Eleição com ID {id} inválido.")
             : eleicao;
     }
 
