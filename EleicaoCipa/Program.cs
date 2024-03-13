@@ -1,6 +1,6 @@
-using EleicaoCipa.ApplicationService;
-using EleicaoCipa.Data;
-using EleicaoCipa.Data.Repository;
+using EleicaoCipaVotacao.ApplicationService;
+using EleicaoCipaVotacao.Data;
+using EleicaoCipaVotacao.Data.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
