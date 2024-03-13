@@ -1,4 +1,4 @@
-﻿namespace Dominio.Domain.Enums;
+﻿namespace EleicaoCipa.Domain.Enums;
 
 public enum StatusEnum
 {

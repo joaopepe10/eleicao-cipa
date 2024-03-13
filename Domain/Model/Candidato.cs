@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Dominio.Domain.Model;
+﻿namespace EleicaoCipa.Domain.Model;
 
 public class Candidato : BaseEntity
 {

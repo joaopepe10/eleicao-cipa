@@ -1,7 +1,6 @@
-﻿using Dominio.Domain.Enums;
+﻿using EleicaoCipa.Domain.Enums;
 
-namespace Dominio.Domain.Model;
-
+namespace EleicaoCipa.Domain.Model;
 public class Eleicao : BaseEntity
 {
     public DateTime DataInicio { get; set; }

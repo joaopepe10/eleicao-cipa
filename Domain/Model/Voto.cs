@@ -1,4 +1,4 @@
-﻿namespace Dominio.Domain.Model;
+﻿namespace EleicaoCipa.Domain.Model;
 
 public class Voto : BaseEntity
 {

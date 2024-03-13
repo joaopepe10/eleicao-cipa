@@ -1,7 +1,4 @@
-﻿using Dominio.Domain.Model;
-
-namespace EleicaoCipa.Data.Repository.Interface;
-
-public interface IUsuarioRepository : IRepositoryBase<Usuario>
+﻿namespace EleicaoCipa.Domain.Core.Interfaces.Repositories;
+public interface IUsuarioRepository
 {
 }

@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Dominio.Domain.Model;
-
+﻿namespace EleicaoCipa.Domain.Model;
 public class Usuario : BaseEntity
 {
     public string Nome { get; set; }
