@@ -1,8 +1,7 @@
-﻿using EleicaoCipa.Data.Configurations;
-using EleicaoCipa.Dominio.Model;
+﻿using EleicaoCipa.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace EleicaoCipa.Data;
+namespace EleicaoCipaVotacao.Data;
 
 public class EleicaoContext : DbContext
 {
