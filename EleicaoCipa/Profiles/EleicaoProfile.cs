@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using EleicaoCipa.Data.Dto.EleicaoDto.RequestDto;
-using EleicaoCipa.Data.Dto.EleicaoDto.ResponseDto;
-using EleicaoCipa.Dominio.Model;
-using EleicaoCipa.Enums;
+using EleicaoCipa.Domain.Enums;
+using EleicaoCipa.Domain.Model;
+using EleicaoCipaVotacao.Data.Dto.EleicaoDto.RequestDto;
+using EleicaoCipaVotacao.Data.Dto.EleicaoDto.ResponseDto;
 
-namespace EleicaoCipa.Profiles;
+namespace EleicaoCipaVotacao.Profiles;
 
 public class EleicaoProfile : Profile
 {

@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using EleicaoCipa.Data.Dto.CandidatoDto.RequestDto;
-using EleicaoCipa.Data.Dto.CandidatoDto.ResponseDto;
-using EleicaoCipa.Dominio.Model;
+using EleicaoCipa.Domain.Model;
+using EleicaoCipaVotacao.Data.Dto.CandidatoDto.RequestDto;
+using EleicaoCipaVotacao.Data.Dto.CandidatoDto.ResponseDto;
 
-namespace EleicaoCipa.Profiles;
+namespace EleicaoCipaVotacao.Profiles;
 
 public class CandidatoProfile : Profile
 {
@@ -17,7 +17,7 @@ public class CandidatoProfile : Profile
         CreateMap<Candidato, ReadCandidatoDto>()
             .ForMember(dto => dto.QuantidadeDeVotos, opts => opts.MapFrom(entidade => entidade.Votos.Count()))
             .ForMember(dto => dto.NomeCandidato, opts => opts.MapFrom(entidade => entidade.Usuario.Nome))
-            .ReverseMap();            
+            .ReverseMap();
         CreateMap<UpdateDiscursoDto, Candidato>().ReverseMap();
     }
 }

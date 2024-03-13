@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using EleicaoCipa.Data.Dto.UsuarioDto.RequestDto;
-using EleicaoCipa.Data.Dto.UsuarioDto.ResponseDto;
-using EleicaoCipa.Dominio.Model;
+using EleicaoCipa.Domain.Model;
+using EleicaoCipaVotacao.Data.Dto.UsuarioDto.RequestDto;
+using EleicaoCipaVotacao.Data.Dto.UsuarioDto.ResponseDto;
 
-namespace EleicaoCipa.Profiles;
+namespace EleicaoCipaVotacao.Profiles;
 
 public class UsuarioProfile : Profile
 {
