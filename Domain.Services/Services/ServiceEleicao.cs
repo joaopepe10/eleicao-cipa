@@ -1,11 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EleicaoCipa.Domain.Core.Interfaces.Repositories;
+using EleicaoCipa.Domain.Core.Interfaces.Services;
+using EleicaoCipa.Domain.Model;
 
-namespace Domain.Services.Services;
+namespace EleicaoCipa.Domain.Services.Services;
 
-public class ServiceEleicao
+public class ServiceEleicao : ServiceBase<Eleicao>, IServiceEleicao
 {
+    private readonly IEleicaoRepository _repository;
+
+    public ServiceEleicao(IEleicaoRepository repository) : base(repository)
+    {
+        _repository = repository;
+    }
 }
