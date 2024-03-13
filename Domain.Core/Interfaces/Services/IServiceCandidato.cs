@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EleicaoCipa.Domain.Model;
 
-namespace Domain.Core.Interfaces.Services;
+namespace EleicaoCipa.Domain.Core.Interfaces.Services;
 
-public class IServiceCandidato : IServiceBase
+public interface IServiceCandidato : IServiceBase<Candidato>
 {
 }
