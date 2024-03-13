@@ -1,9 +1,10 @@
-﻿using EleicaoCipa.Data.Repository.Interface;
-using EleicaoCipa.Dominio.Model;
+﻿using EleicaoCipa.Domain.Core.Interfaces.Repositories;
+using EleicaoCipa.Domain.Model;
+using EleicaoCipaVotacao.Data;
 
-namespace EleicaoCipa.Data.Repository;
+namespace EleicaoCipaVotacao.Data.Repository;
 
-public class UsuarioRepository : IUsuarioRepository
+public class UsuarioRepository
 {
     private readonly EleicaoContext _context;
 

@@ -1,15 +1,20 @@
-﻿using EleicaoCipa.Data.Repository.Interface;
-using EleicaoCipa.Dominio.Model;
+﻿using EleicaoCipa.Domain.Core.Interfaces.Repositories;
+using EleicaoCipa.Domain.Model;
 
-namespace EleicaoCipa.Data.Repository;
+namespace EleicaoCipaVotacao.Data.Repository;
 
-public class VotoRepository : IRepositoryBase<Voto>
+public class VotoRepository : IRepositoryVoto
 {
     private readonly EleicaoContext _context;
 
     public VotoRepository(EleicaoContext context)
     {
         _context = context;
+    }
+
+    public void Delete(Voto entity)
+    {
+        throw new NotImplementedException();
     }
 
     public IEnumerable<Voto> GetAll()
@@ -32,4 +37,6 @@ public class VotoRepository : IRepositoryBase<Voto>
         _context.SaveChanges();
         return entity;
     }
+
+
 }

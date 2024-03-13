@@ -1,7 +1,7 @@
-﻿using EleicaoCipa.Dominio.Model;
+﻿using EleicaoCipa.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace EleicaoCipa.Data.Repository;
+namespace EleicaoCipaVotacao.Data.Repository;
 
 public class EleicaoRepository
 {
@@ -19,10 +19,10 @@ public class EleicaoRepository
         return eleicao;
     }
     public void Update(Eleicao entity)
-    {        
+    {
         _context.Update(entity);
         _context.SaveChanges();
-    }    
+    }
 
     public Eleicao? GetById(int id) => _context.Eleicoes.FirstOrDefault(eleicao => eleicao.Id == id);
 

@@ -1,7 +1,7 @@
-﻿using EleicaoCipa.Data.Repository.Interface;
-using EleicaoCipa.Dominio.Model;
+﻿using EleicaoCipa.Domain.Core.Interfaces.Repositories;
+using EleicaoCipa.Domain.Model;
 
-namespace EleicaoCipa.Data.Repository;
+namespace EleicaoCipaVotacao.Data.Repository;
 
 public class CandidatoRepository : ICandidatoRepository
 {
@@ -9,7 +9,6 @@ public class CandidatoRepository : ICandidatoRepository
 
     public CandidatoRepository(EleicaoContext context)
     {
-
         _context = context;
     }
 
@@ -35,5 +34,10 @@ public class CandidatoRepository : ICandidatoRepository
         _context.Update(candidato);
         _context.SaveChanges();
         return candidato;
+    }
+
+    public void Delete(Candidato entity)
+    {
+        throw new NotImplementedException();
     }
 }
