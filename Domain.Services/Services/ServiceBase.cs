@@ -1,14 +1,8 @@
-﻿using Domain.Core.Interfaces.Services;
-using EleicaoCipa.Data.Repository.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EleicaoCipa.Domain.Core.Interfaces.Repositories;
 
-namespace Dominio.Domain.Services.Services;
+namespace EleicaoCipa.Domain.Services.Services;
 
-public abstract class ServiceBase<TEntity> : IDisposable, IServiceBase where TEntity : class
+public abstract class ServiceBase<TEntity> : IDisposable, IServiceBase<TEntity> where TEntity : class
 {
     private readonly IRepositoryBase<TEntity> _repository;
 
@@ -20,11 +14,11 @@ public abstract class ServiceBase<TEntity> : IDisposable, IServiceBase where TEn
     {
         _repository.Post(entity);
     }
-    public virtual TEntity GetById(int id)
+    public virtual TEntity? GetById(int id)
     {
         return _repository.GetById(id);
     }
-    public virtual IEnumerable<TEntity> GetAll()
+    public virtual IEnumerable<TEntity>? GetAll()
     {
         return _repository.GetAll();
     }
@@ -41,9 +35,4 @@ public abstract class ServiceBase<TEntity> : IDisposable, IServiceBase where TEn
     {
         throw new NotImplementedException();
     }
-
-    //public virtual void Dispose()
-    //{
-    //    _repository.Dispose();
-    //}
 }
