@@ -1,14 +1,14 @@
-﻿using EleicaoCipa.ApplicationService;
-using EleicaoCipa.Data.Dto.CandidatoDto.RequestDto;
-using EleicaoCipa.Data.Dto.EleicaoDto.RequestDto;
-using EleicaoCipa.Data.Dto.EleicaoDto.ResponseDto;
-using EleicaoCipa.Data.Repository;
+﻿using EleicaoCipaVotacao.ApplicationService;
+using EleicaoCipaVotacao.Data.Dto.CandidatoDto.RequestDto;
+using EleicaoCipaVotacao.Data.Dto.EleicaoDto.RequestDto;
+using EleicaoCipaVotacao.Data.Dto.EleicaoDto.ResponseDto;
+using EleicaoCipaVotacao.Data.Repository;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EleicaoCipa.Controller;
+namespace EleicaoCipaVotacao.Controller;
 [ApiController]
 [Route("[controller]")]
-public class EleicaoController : ControllerBase    
+public class EleicaoController : ControllerBase
 {
     private ApplicationServiceEleicao _service;
 
@@ -26,12 +26,13 @@ public class EleicaoController : ControllerBase
         {
             var responseDto = _service.Post(dto);
             return CreatedAtAction(nameof(GetById), new { responseDto.Id }, responseDto);
-        }catch (Exception ex)
+        }
+        catch (Exception ex)
         {
             return NotFound(ex.Message);
         }
     }
-    
+
     [HttpGet("{id}")]
     public IActionResult GetById(int id)
     {
@@ -48,7 +49,7 @@ public class EleicaoController : ControllerBase
             var responseCandidato = _service.PostCandidato(id, dto);
             return Ok(responseCandidato);
         }
-         catch (Exception ex)
+        catch (Exception ex)
         {
             return NotFound(ex.Message);
         }
@@ -57,7 +58,7 @@ public class EleicaoController : ControllerBase
     [HttpPut("{id}/altera-status")]
     public IActionResult Put(int id, [FromBody] UpdateStatusEleicaoDto dto)
     {
-        if(dto is null) return NotFound("Favor preencer o campo de status.");
+        if (dto is null) return NotFound("Favor preencer o campo de status.");
         var responseDto = _service.Update(dto, id);
         return Ok(responseDto);
     }
@@ -75,7 +76,7 @@ public class EleicaoController : ControllerBase
     }
 
     [HttpGet("{id}/resultado")]
-    public IActionResult GetEleicaoResultadoById(int id) 
+    public IActionResult GetEleicaoResultadoById(int id)
     {
         return Ok(_service.GetEleicaoResultadoById(id));
     }

@@ -1,9 +1,8 @@
-﻿using EleicaoCipa.ApplicationService;
-using EleicaoCipa.Data.Dto.VotoDto;
-using EleicaoCipa.Data.Dto.VotoDto.RequestDto;
+﻿using EleicaoCipaVotacao.ApplicationService;
+using EleicaoCipaVotacao.Data.Dto.VotoDto.RequestDto;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EleicaoCipa.Controller;
+namespace EleicaoCipaVotacao.Controller;
 [ApiController]
 [Route("[controller]")]
 public class VotoController : ControllerBase
@@ -23,7 +22,8 @@ public class VotoController : ControllerBase
         {
             var responseDto = _service.Post(dto);
             return CreatedAtAction(nameof(GetById), new { responseDto.Id }, responseDto);
-        }catch (Exception ex)
+        }
+        catch (Exception ex)
         {
             return NotFound(ex.Message);
         }

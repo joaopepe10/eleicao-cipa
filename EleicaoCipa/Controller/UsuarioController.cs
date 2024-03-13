@@ -1,12 +1,9 @@
-﻿using AutoMapper;
-using EleicaoCipa.ApplicationService;
-using EleicaoCipa.Data;
-using EleicaoCipa.Data.Dto.UsuarioDto.RequestDto;
-using EleicaoCipa.Data.Dto.UsuarioDto.ResponseDto;
-using EleicaoCipa.Model;
+﻿using EleicaoCipaVotacao.ApplicationService;
+using EleicaoCipaVotacao.Data.Dto.UsuarioDto.RequestDto;
+using EleicaoCipaVotacao.Data.Dto.UsuarioDto.ResponseDto;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EleicaoCipa.Controller;
+namespace EleicaoCipaVotacao.Controller;
 [ApiController]
 [Route("[controller]")]
 public class UsuarioController : ControllerBase
@@ -20,7 +17,7 @@ public class UsuarioController : ControllerBase
     [HttpPost]
     public IActionResult Post([FromBody] CreateUsuarioDto dto)
     {
-        if(dto is null) return NotFound("Dado para criação de usuário inválidos.");
+        if (dto is null) return NotFound("Dado para criação de usuário inválidos.");
         var responseDto = _service.Post(dto);
         return CreatedAtAction(nameof(GetById), new { responseDto.Id }, responseDto);
     }

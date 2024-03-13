@@ -1,9 +1,9 @@
-﻿using EleicaoCipa.ApplicationService;
-using EleicaoCipa.Data.Dto.CandidatoDto.RequestDto;
-using EleicaoCipa.Data.Dto.CandidatoDto.ResponseDto;
+﻿using EleicaoCipaVotacao.ApplicationService;
+using EleicaoCipaVotacao.Data.Dto.CandidatoDto.RequestDto;
+using EleicaoCipaVotacao.Data.Dto.CandidatoDto.ResponseDto;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EleicaoCipa.Controller;
+namespace EleicaoCipaVotacao.Controller;
 [ApiController]
 [Route("[controller]")]
 public class CandidatoController : ControllerBase
@@ -22,7 +22,7 @@ public class CandidatoController : ControllerBase
             var responseDto = _service.GetById(id);
             return Ok(responseDto);
         }
-        catch(ArgumentException e)
+        catch (ArgumentException e)
         {
             return NotFound(e.Message);
         }
