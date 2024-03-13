@@ -1,9 +1,9 @@
-﻿using EleicaoCipa.Data.Dto.CandidatoDto.ResponseDto;
+﻿using EleicaoCipaVotacao.Data.Dto.CandidatoDto.ResponseDto;
 
-namespace EleicaoCipa.Data.Dto.EleicaoDto.ResponseDto;
+namespace EleicaoCipaVotacao.Data.Dto.EleicaoDto.ResponseDto;
 
-public class ReadResultadoEleicaoDto 
+public class ReadResultadoEleicaoDto
 {
-    public int EleicaoId { get; set; }  
+    public int EleicaoId { get; set; }
     public IEnumerable<ReadCandidatoVotosDto> Candidatos { get; set; }
 }

@@ -1,7 +1,7 @@
-﻿namespace EleicaoCipa.Data.Dto.CandidatoDto.RequestDto;
+﻿namespace EleicaoCipaVotacao.Data.Dto.CandidatoDto.RequestDto;
 
 public class CreateCandidatoDto
 {
     public int UsuarioId { get; set; }
-    public string Discurso { get; set; } = string.Empty;    
+    public string Discurso { get; set; } = string.Empty;
 }

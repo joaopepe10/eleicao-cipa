@@ -1,6 +1,4 @@
-﻿using EleicaoCipa.Data.Dto.UsuarioDto.ResponseDto;
-
-namespace EleicaoCipa.Data.Dto.CandidatoDto.ResponseDto;
+﻿namespace EleicaoCipaVotacao.Data.Dto.CandidatoDto.ResponseDto;
 
 public class ReadCandidatoDto : BaseDto
 {

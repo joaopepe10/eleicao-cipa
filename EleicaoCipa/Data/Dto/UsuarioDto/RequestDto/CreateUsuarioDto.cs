@@ -1,4 +1,4 @@
-﻿namespace EleicaoCipa.Data.Dto.UsuarioDto.RequestDto;
+﻿namespace EleicaoCipaVotacao.Data.Dto.UsuarioDto.RequestDto;
 
 public class CreateUsuarioDto
 {

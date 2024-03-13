@@ -1,4 +1,4 @@
-﻿namespace EleicaoCipa.Data.Dto;
+﻿namespace EleicaoCipaVotacao.Data.Dto;
 
 public abstract class BaseDto
 {

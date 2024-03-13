@@ -1,4 +1,6 @@
-﻿namespace EleicaoCipa.Data.Dto.UsuarioDto.ResponseDto;
+﻿using EleicaoCipaVotacao.Data.Dto;
+
+namespace EleicaoCipaVotacao.Data.Dto.UsuarioDto.ResponseDto;
 
 public class ReadUsuarioDto : BaseDto
 {

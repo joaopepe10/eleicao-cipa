@@ -1,7 +1,6 @@
-﻿using EleicaoCipa.Data.Dto.CandidatoDto.ResponseDto;
-using EleicaoCipa.Enums;
+﻿using EleicaoCipaVotacao.Data.Dto.CandidatoDto.ResponseDto;
 
-namespace EleicaoCipa.Data.Dto.EleicaoDto.ResponseDto;
+namespace EleicaoCipaVotacao.Data.Dto.EleicaoDto.ResponseDto;
 
 public class ReadEleicaoDto : BaseDto
 {

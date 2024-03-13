@@ -1,4 +1,6 @@
-﻿namespace EleicaoCipa.Data.Dto.EleicaoDto.RequestDto;
+﻿using EleicaoCipaVotacao.Data.Dto;
+
+namespace EleicaoCipaVotacao.Data.Dto.EleicaoDto.RequestDto;
 
 public class UpdateEleicaoDataInicioDto : BaseDto
 {
