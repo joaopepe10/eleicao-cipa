@@ -1,10 +1,10 @@
-﻿using EleicaoCipa.Infrastructure.Data;
+﻿using EleicaoCipa.Infraestrutura.Data;
 using EleicaoCipa.Infreastruture.CrossCutting.IOC;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<EleicaoContext>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.RegisteModule();
 
@@ -14,8 +14,6 @@ builder.Services.AddDbContext<EleicaoContext>(opts =>
                                               .UseLazyLoadingProxies()
                                               .UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
-builder.Services.
-    AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Add services to the container.
 builder.Services.AddControllers().AddNewtonsoftJson();
