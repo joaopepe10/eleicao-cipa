@@ -3,18 +3,18 @@ using Castle.Core.Internal;
 using EleicaoCipa.Aplicacao.DTO.Dto.VotoDto.RequestDto;
 using EleicaoCipa.Aplicacao.DTO.Dto.VotoDto.ResponseDto;
 using EleicaoCipa.Aplicacao.Interfaces;
+using EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
 using EleicaoCipa.Dominio.Model;
-using EleicaoCipaVotacao.Data.Repository;
 
 namespace EleicaoCipa.Aplicacao.Service;
 
 public class ApplicationServiceVoto : IApplicationServiceVoto
 {
-    private readonly VotoRepository _repository;
+    private readonly IVotoRepository _repository;
     private readonly IMapper _mapper;
-    private readonly ApplicationServiceEleicao _serviceEleicao;
+    private readonly IApplicationServiceEleicao _serviceEleicao;
 
-    public ApplicationServiceVoto(VotoRepository repository, IMapper mapper, ApplicationServiceEleicao serviceEleicao)
+    public ApplicationServiceVoto(IVotoRepository repository, IMapper mapper, IApplicationServiceEleicao serviceEleicao)
     {
         _repository = repository;
         _mapper = mapper;

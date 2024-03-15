@@ -1,5 +1,6 @@
 ﻿using EleicaoCipa.Aplicacao.DTO.Dto.UsuarioDto.RequestDto;
 using EleicaoCipa.Aplicacao.DTO.Dto.UsuarioDto.ResponseDto;
+using EleicaoCipa.Aplicacao.Interfaces;
 using EleicaoCipa.Aplicacao.Service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,8 +9,8 @@ namespace EleicaoCipa.Apresentacao.Controllers;
 [Route("[controller]")]
 public class UsuarioController : ControllerBase
 {
-    private readonly ApplicationServiceUsuario _service;
-    public UsuarioController(ApplicationServiceUsuario service)
+    private readonly IApplicationServiceUsuario _service;
+    public UsuarioController(IApplicationServiceUsuario service)
     {
         _service = service;
     }

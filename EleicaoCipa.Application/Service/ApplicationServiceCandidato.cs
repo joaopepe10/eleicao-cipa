@@ -2,16 +2,16 @@
 using EleicaoCipa.Aplicacao.DTO.Dto.CandidatoDto.RequestDto;
 using EleicaoCipa.Aplicacao.DTO.Dto.CandidatoDto.ResponseDto;
 using EleicaoCipa.Aplicacao.Interfaces;
+using EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
 using EleicaoCipa.Dominio.Model;
-using EleicaoCipaVotacao.Data.Repository;
 
 namespace EleicaoCipa.Aplicacao.Service;
 
 public class ApplicationServiceCandidato : IApplicationServiceCandidato
 {
     private readonly IMapper _mapper;
-    private readonly CandidatoRepository _repository;
-    public ApplicationServiceCandidato(IMapper mapper, CandidatoRepository repository)
+    private readonly ICandidatoRepository _repository;
+    public ApplicationServiceCandidato(IMapper mapper, ICandidatoRepository repository)
     {
         _mapper = mapper;
         _repository = repository;

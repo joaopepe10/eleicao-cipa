@@ -1,8 +1,7 @@
 ﻿using EleicaoCipa.Aplicacao.DTO.Dto.CandidatoDto.RequestDto;
 using EleicaoCipa.Aplicacao.DTO.Dto.EleicaoDto.RequestDto;
 using EleicaoCipa.Aplicacao.DTO.Dto.EleicaoDto.ResponseDto;
-using EleicaoCipa.Aplicacao.Service;
-using EleicaoCipaVotacao.Data.Repository;
+using EleicaoCipa.Aplicacao.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EleicaoCipa.Apresentacao.Controllers;
@@ -10,9 +9,9 @@ namespace EleicaoCipa.Apresentacao.Controllers;
 [Route("[controller]")]
 public class EleicaoController : ControllerBase
 {
-    private ApplicationServiceEleicao _service;
+    private readonly IApplicationServiceEleicao _service;
 
-    public EleicaoController(EleicaoRepository eleicaoRepository, ApplicationServiceEleicao service)
+    public EleicaoController(IApplicationServiceEleicao service)
     {
         _service = service;
     }

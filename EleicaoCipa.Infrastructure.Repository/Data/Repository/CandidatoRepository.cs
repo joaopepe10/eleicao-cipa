@@ -1,6 +1,6 @@
 ﻿using EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
 using EleicaoCipa.Dominio.Model;
-using EleicaoCipa.Infrastructure.Data;
+using EleicaoCipa.Infraestrutura.Data;
 using EleicaoCipa.Infrastructure.Repository.Data.Repository;
 
 namespace EleicaoCipaVotacao.Data.Repository;

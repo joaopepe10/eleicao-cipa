@@ -1,5 +1,5 @@
 ﻿using EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
-using EleicaoCipa.Infrastructure.Data;
+using EleicaoCipa.Infraestrutura.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;

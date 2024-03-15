@@ -1,4 +1,5 @@
 ﻿using EleicaoCipa.Aplicacao.DTO.Dto.VotoDto.RequestDto;
+using EleicaoCipa.Aplicacao.Interfaces;
 using EleicaoCipa.Aplicacao.Service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,9 +8,9 @@ namespace EleicaoCipa.Apresentacao.Controllers;
 [Route("[controller]")]
 public class VotoController : ControllerBase
 {
-    private readonly ApplicationServiceVoto _service;
+    private readonly IApplicationServiceVoto _service;
 
-    public VotoController(ApplicationServiceVoto service)
+    public VotoController(IApplicationServiceVoto service)
     {
         _service = service;
     }

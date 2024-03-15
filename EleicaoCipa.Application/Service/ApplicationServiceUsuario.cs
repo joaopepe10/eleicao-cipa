@@ -2,17 +2,17 @@
 using EleicaoCipa.Aplicacao.DTO.Dto.UsuarioDto.RequestDto;
 using EleicaoCipa.Aplicacao.DTO.Dto.UsuarioDto.ResponseDto;
 using EleicaoCipa.Aplicacao.Interfaces;
+using EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
 using EleicaoCipa.Dominio.Model;
-using EleicaoCipaVotacao.Data.Repository;
 
 namespace EleicaoCipa.Aplicacao.Service;
 
 public class ApplicationServiceUsuario : IApplicationServiceUsuario
 {
     private readonly IMapper _mapper;
-    private readonly UsuarioRepository _repository;
+    private readonly IUsuarioRepository _repository;
 
-    public ApplicationServiceUsuario(IMapper mapper, UsuarioRepository repository)
+    public ApplicationServiceUsuario(IMapper mapper, IUsuarioRepository repository)
     {
         _mapper = mapper;
         _repository = repository;

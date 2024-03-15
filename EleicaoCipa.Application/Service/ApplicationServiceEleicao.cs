@@ -4,18 +4,18 @@ using EleicaoCipa.Aplicacao.DTO.Dto.CandidatoDto.ResponseDto;
 using EleicaoCipa.Aplicacao.DTO.Dto.EleicaoDto.RequestDto;
 using EleicaoCipa.Aplicacao.DTO.Dto.EleicaoDto.ResponseDto;
 using EleicaoCipa.Aplicacao.Interfaces;
+using EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
 using EleicaoCipa.Dominio.Model;
 using EleicaoCipa.Infraestrutura.CrossCutting.Enum.Enums;
-using EleicaoCipaVotacao.Data.Repository;
 
 namespace EleicaoCipa.Aplicacao.Service;
 
 public class ApplicationServiceEleicao : IApplicationServiceEleicao
 {
     private readonly IMapper _mapper;
-    private readonly EleicaoRepository _repository;
-    private readonly ApplicationServiceCandidato _serviceCandidato;
-    public ApplicationServiceEleicao(IMapper mapper, EleicaoRepository repository, ApplicationServiceCandidato serviceCandidato)
+    private readonly IEleicaoRepository _repository;
+    private readonly IApplicationServiceCandidato _serviceCandidato;
+    public ApplicationServiceEleicao(IMapper mapper, IEleicaoRepository repository, IApplicationServiceCandidato serviceCandidato)
     {
         _mapper = mapper;
         _repository = repository;

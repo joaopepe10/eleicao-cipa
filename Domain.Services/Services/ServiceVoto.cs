@@ -6,8 +6,8 @@ namespace EleicaoCipa.Domain.Servicos.Services;
 
 public class ServiceVoto : ServiceBase<Voto>, IServiceVoto
 {
-    private readonly IRepositoryVoto _repository;
-    public ServiceVoto(IRepositoryVoto repository) : base(repository)
+    private readonly IVotoRepository _repository;
+    public ServiceVoto(IVotoRepository repository) : base(repository)
     {
         _repository = repository;
     }
