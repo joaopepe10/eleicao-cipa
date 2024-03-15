@@ -13,7 +13,8 @@ public static class IocModule
 {
     public static void RegisteModule(this IServiceCollection services)
     {
-        RegisteModule(services);
+        RegisterContext(services);
+        RegisterSingleton(services);
         RegisterScopped(services);
         RegisterTransient(services);
     }
