@@ -10,9 +10,10 @@ public abstract class ServiceBase<TEntity> : IDisposable, IServiceBase<TEntity> 
     {
         _repository = repository;
     }
-    public virtual void Post(TEntity entity)
+    public virtual TEntity Post(TEntity entity)
     {
         _repository.Post(entity);
+        return entity;
     }
     public virtual TEntity? GetById(int id)
     {
