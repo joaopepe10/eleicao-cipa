@@ -1,4 +1,4 @@
-﻿namespace EleicaoCipa.Application.DTO.Dto;
+﻿namespace EleicaoCipa.Aplicacao.DTO.Dto;
 
 public abstract class BaseDto
 {
