@@ -1,6 +1,4 @@
-﻿using EleicaoCipa.Application.DTO.Dto;
-
-namespace EleicaoCipa.Application.DTO.Dto.VotoDto.ResponseDto
+﻿namespace EleicaoCipa.Aplicacao.DTO.Dto.VotoDto.ResponseDto
 {
     public class ReadVotoDto : BaseDto
     {

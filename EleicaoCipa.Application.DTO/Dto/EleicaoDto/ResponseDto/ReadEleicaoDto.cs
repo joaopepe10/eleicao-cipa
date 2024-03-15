@@ -1,7 +1,7 @@
-﻿using EleicaoCipa.Application.DTO.Dto;
-using EleicaoCipa.Application.DTO.Dto.CandidatoDto.ResponseDto;
+﻿using EleicaoCipa.Aplicacao.DTO.Dto;
+using EleicaoCipa.Aplicacao.DTO.Dto.CandidatoDto.ResponseDto;
 
-namespace EleicaoCipa.Application.DTO.Dto.EleicaoDto.ResponseDto;
+namespace EleicaoCipa.Aplicacao.DTO.Dto.EleicaoDto.ResponseDto;
 
 public class ReadEleicaoDto : BaseDto
 {

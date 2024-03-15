@@ -1,6 +1,6 @@
-﻿using EleicaoCipa.Application.DTO.Dto;
+﻿using EleicaoCipa.Aplicacao.DTO.Dto;
 
-namespace EleicaoCipa.Application.DTO.Dto.EleicaoDto.RequestDto;
+namespace EleicaoCipa.Aplicacao.DTO.Dto.EleicaoDto.RequestDto;
 
 public class InsertCandidatoDto : BaseDto
 {

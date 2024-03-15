@@ -1,6 +1,6 @@
-﻿using EleicaoCipa.Domain.Enums;
+﻿using EleicaoCipa.Infraestrutura.CrossCutting.Enum.Enums;
 
-namespace EleicaoCipa.Domain.Model;
+namespace EleicaoCipa.Dominio.Model;
 public class Eleicao : BaseEntity
 {
     public DateTime DataInicio { get; set; }

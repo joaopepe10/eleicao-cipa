@@ -1,7 +1,7 @@
-﻿using EleicaoCipa.Application.DTO.Dto.CandidatoDto.RequestDto;
-using EleicaoCipa.Application.DTO.Dto.CandidatoDto.ResponseDto;
+﻿using EleicaoCipa.Aplicacao.DTO.Dto.CandidatoDto.RequestDto;
+using EleicaoCipa.Aplicacao.DTO.Dto.CandidatoDto.ResponseDto;
 
-namespace EleicaoCipa.Application.Interfaces;
+namespace EleicaoCipa.Aplicacao.Interfaces;
 
 public interface IApplicationServiceCandidato
 {

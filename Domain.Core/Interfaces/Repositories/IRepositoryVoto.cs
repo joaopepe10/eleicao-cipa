@@ -1,6 +1,6 @@
-﻿using EleicaoCipa.Domain.Model;
+﻿using EleicaoCipa.Dominio.Model;
 
-namespace EleicaoCipa.Domain.Core.Interfaces.Repositories;
+namespace EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
 public interface IRepositoryVoto : IRepositoryBase<Voto>
 {
 }

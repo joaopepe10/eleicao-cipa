@@ -1,4 +1,4 @@
-﻿namespace EleicaoCipa.Application.DTO.Dto.UsuarioDto.RequestDto;
+﻿namespace EleicaoCipa.Aplicacao.DTO.Dto.UsuarioDto.RequestDto;
 
 public class UpdateUsuarioDto
 {

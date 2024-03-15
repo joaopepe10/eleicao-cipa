@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using EleicaoCipa.Application.DTO.Dto.UsuarioDto.RequestDto;
-using EleicaoCipa.Application.DTO.Dto.UsuarioDto.ResponseDto;
-using EleicaoCipa.Application.Interfaces;
-using EleicaoCipa.Domain.Model;
+using EleicaoCipa.Aplicacao.DTO.Dto.UsuarioDto.RequestDto;
+using EleicaoCipa.Aplicacao.DTO.Dto.UsuarioDto.ResponseDto;
+using EleicaoCipa.Aplicacao.Interfaces;
+using EleicaoCipa.Dominio.Model;
 using EleicaoCipaVotacao.Data.Repository;
 
-namespace EleicaoCipa.Application.Service;
+namespace EleicaoCipa.Aplicacao.Service;
 
 public class ApplicationServiceUsuario : IApplicationServiceUsuario
 {

@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
-using EleicaoCipa.Application.DTO.Dto.CandidatoDto.RequestDto;
-using EleicaoCipa.Application.DTO.Dto.CandidatoDto.ResponseDto;
-using EleicaoCipa.Application.DTO.Dto.EleicaoDto.RequestDto;
-using EleicaoCipa.Application.DTO.Dto.EleicaoDto.ResponseDto;
-using EleicaoCipa.Application.Interfaces;
-using EleicaoCipa.Domain.Enums;
-using EleicaoCipa.Domain.Model;
+using EleicaoCipa.Aplicacao.DTO.Dto.CandidatoDto.RequestDto;
+using EleicaoCipa.Aplicacao.DTO.Dto.CandidatoDto.ResponseDto;
+using EleicaoCipa.Aplicacao.DTO.Dto.EleicaoDto.RequestDto;
+using EleicaoCipa.Aplicacao.DTO.Dto.EleicaoDto.ResponseDto;
+using EleicaoCipa.Aplicacao.Interfaces;
+using EleicaoCipa.Dominio.Model;
+using EleicaoCipa.Infraestrutura.CrossCutting.Enum.Enums;
 using EleicaoCipaVotacao.Data.Repository;
 
-namespace EleicaoCipa.Application.Service;
+namespace EleicaoCipa.Aplicacao.Service;
 
 public class ApplicationServiceEleicao : IApplicationServiceEleicao
 {

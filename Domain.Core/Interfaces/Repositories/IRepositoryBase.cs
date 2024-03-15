@@ -1,4 +1,4 @@
-﻿namespace EleicaoCipa.Domain.Core.Interfaces.Repositories;
+﻿namespace EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
 public interface IRepositoryBase<TEntity> where TEntity : class
 {
     TEntity Post(TEntity entity);

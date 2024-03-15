@@ -1,7 +1,7 @@
-﻿using EleicaoCipa.Application.DTO.Dto.VotoDto.RequestDto;
-using EleicaoCipa.Application.DTO.Dto.VotoDto.ResponseDto;
+﻿using EleicaoCipa.Aplicacao.DTO.Dto.VotoDto.RequestDto;
+using EleicaoCipa.Aplicacao.DTO.Dto.VotoDto.ResponseDto;
 
-namespace EleicaoCipa.Application.Interfaces;
+namespace EleicaoCipa.Aplicacao.Interfaces;
 
 public interface IApplicationServiceVoto
 {

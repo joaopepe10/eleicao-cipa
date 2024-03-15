@@ -1,8 +1,8 @@
-﻿using EleicaoCipa.Domain.Core.Interfaces.Repositories;
-using EleicaoCipa.Domain.Core.Interfaces.Services;
-using EleicaoCipa.Domain.Model;
+﻿using EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
+using EleicaoCipa.Domain.Nucleo.Interfaces.Services;
+using EleicaoCipa.Dominio.Model;
 
-namespace EleicaoCipa.Domain.Services.Services;
+namespace EleicaoCipa.Domain.Servicos.Services;
 
 public class ServiceCandidato : ServiceBase<Candidato>, IServiceCandidato
 {

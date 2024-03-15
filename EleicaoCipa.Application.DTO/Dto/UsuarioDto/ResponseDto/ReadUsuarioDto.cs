@@ -1,6 +1,4 @@
-﻿using EleicaoCipa.Application.DTO.Dto;
-
-namespace EleicaoCipa.Application.DTO.Dto.UsuarioDto.ResponseDto;
+﻿namespace EleicaoCipa.Aplicacao.DTO.Dto.UsuarioDto.ResponseDto;
 
 public class ReadUsuarioDto : BaseDto
 {

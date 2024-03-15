@@ -1,4 +1,4 @@
-﻿namespace EleicaoCipa.Domain.Model;
+﻿namespace EleicaoCipa.Dominio.Model;
 public class Usuario : BaseEntity
 {
     public string Nome { get; set; }

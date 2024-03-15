@@ -1,6 +1,6 @@
-﻿using EleicaoCipa.Domain.Enums;
+﻿using EleicaoCipa.Infraestrutura.CrossCutting.Enum.Enums;
 
-namespace EleicaoCipa.Application.DTO.Dto.EleicaoDto.RequestDto;
+namespace EleicaoCipa.Aplicacao.DTO.Dto.EleicaoDto.RequestDto;
 
 public class UpdateStatusEleicaoDto : BaseDto
 {

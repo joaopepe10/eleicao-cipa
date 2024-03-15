@@ -1,7 +1,7 @@
-﻿using EleicaoCipa.Application.DTO.Dto.UsuarioDto.RequestDto;
-using EleicaoCipa.Application.DTO.Dto.UsuarioDto.ResponseDto;
+﻿using EleicaoCipa.Aplicacao.DTO.Dto.UsuarioDto.RequestDto;
+using EleicaoCipa.Aplicacao.DTO.Dto.UsuarioDto.ResponseDto;
 
-namespace EleicaoCipa.Application.Interfaces;
+namespace EleicaoCipa.Aplicacao.Interfaces;
 
 public interface IApplicationServiceUsuario
 {

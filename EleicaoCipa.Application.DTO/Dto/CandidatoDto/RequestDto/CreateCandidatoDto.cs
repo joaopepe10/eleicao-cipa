@@ -1,4 +1,4 @@
-﻿namespace EleicaoCipa.Application.DTO.Dto.CandidatoDto.RequestDto;
+﻿namespace EleicaoCipa.Aplicacao.DTO.Dto.CandidatoDto.RequestDto;
 
 public class CreateCandidatoDto
 {

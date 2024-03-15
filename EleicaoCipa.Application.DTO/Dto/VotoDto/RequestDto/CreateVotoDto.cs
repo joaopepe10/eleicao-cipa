@@ -1,4 +1,4 @@
-﻿namespace EleicaoCipa.Application.DTO.Dto.VotoDto.RequestDto
+﻿namespace EleicaoCipa.Aplicacao.DTO.Dto.VotoDto.RequestDto
 {
     public class CreateVotoDto
     {
