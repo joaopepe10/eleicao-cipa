@@ -1,6 +1,6 @@
-﻿using EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
+﻿using EleicaoCipa.Dominio.Nucleo.Interfaces.Repositories;
 
-namespace EleicaoCipa.Domain.Servicos.Services;
+namespace EleicaoCipa.Dominio.Servicos.Services;
 
 public abstract class ServiceBase<TEntity> : IDisposable, IServiceBase<TEntity> where TEntity : class
 {

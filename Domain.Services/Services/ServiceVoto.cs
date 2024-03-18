@@ -1,8 +1,8 @@
-﻿using EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
-using EleicaoCipa.Domain.Nucleo.Interfaces.Services;
-using EleicaoCipa.Dominio.Model;
+﻿using EleicaoCipa.Dominio.Model;
+using EleicaoCipa.Dominio.Nucleo.Interfaces.Repositories;
+using EleicaoCipa.Dominio.Nucleo.Interfaces.Services;
 
-namespace EleicaoCipa.Domain.Servicos.Services;
+namespace EleicaoCipa.Dominio.Servicos.Services;
 
 public class ServiceVoto : ServiceBase<Voto>, IServiceVoto
 {

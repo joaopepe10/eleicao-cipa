@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EleicaoCipa.Infraestrutura.CrossCutting.Enum\EleicaoCipa.Infraestrutura.CrossCutting.Enum.csproj" />
+    <ProjectReference Include="..\EleicaoCipa.Infraestrutura.CrossCutting.Enum\EleicaoCipa.Infraestrutura.CrossCutting.Enums.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿using EleicaoCipa.Dominio.Model;
 
-namespace EleicaoCipa.Domain.Nucleo.Interfaces.Services;
+namespace EleicaoCipa.Dominio.Nucleo.Interfaces.Services;
 
 public interface IServiceCandidato : IServiceBase<Candidato>
 {
