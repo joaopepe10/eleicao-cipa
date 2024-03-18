@@ -1,4 +1,4 @@
-﻿namespace EleicaoCipa.Infraestrutura.CrossCutting.Enum.Enums;
+﻿namespace EleicaoCipa.Infraestrutura.CrossCutting.Enums.Enums;
 
 public enum StatusEnum
 {
