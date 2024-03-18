@@ -4,9 +4,9 @@ using EleicaoCipa.Aplicacao.DTO.Dto.CandidatoDto.ResponseDto;
 using EleicaoCipa.Aplicacao.DTO.Dto.EleicaoDto.RequestDto;
 using EleicaoCipa.Aplicacao.DTO.Dto.EleicaoDto.ResponseDto;
 using EleicaoCipa.Aplicacao.Interfaces;
-using EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
 using EleicaoCipa.Dominio.Model;
-using EleicaoCipa.Infraestrutura.CrossCutting.Enum.Enums;
+using EleicaoCipa.Dominio.Nucleo.Interfaces.Repositories;
+using EleicaoCipa.Infraestrutura.CrossCutting.Enums.Enums;
 
 namespace EleicaoCipa.Aplicacao.Service;
 

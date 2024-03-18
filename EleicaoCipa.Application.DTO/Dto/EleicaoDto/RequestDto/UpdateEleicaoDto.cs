@@ -1,4 +1,4 @@
-﻿using EleicaoCipa.Infraestrutura.CrossCutting.Enum.Enums;
+﻿using EleicaoCipa.Infraestrutura.CrossCutting.Enums.Enums;
 
 namespace EleicaoCipa.Aplicacao.DTO.Dto.EleicaoDto.RequestDto;
 

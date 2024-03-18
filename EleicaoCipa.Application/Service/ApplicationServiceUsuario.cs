@@ -2,8 +2,8 @@
 using EleicaoCipa.Aplicacao.DTO.Dto.UsuarioDto.RequestDto;
 using EleicaoCipa.Aplicacao.DTO.Dto.UsuarioDto.ResponseDto;
 using EleicaoCipa.Aplicacao.Interfaces;
-using EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
 using EleicaoCipa.Dominio.Model;
+using EleicaoCipa.Dominio.Nucleo.Interfaces.Repositories;
 
 namespace EleicaoCipa.Aplicacao.Service;
 
