@@ -1,10 +1,11 @@
 ﻿using EleicaoCipa.Infraestrutura.Data;
-using EleicaoCipa.Infreastruture.CrossCutting.IOC;
 using Microsoft.EntityFrameworkCore;
+using EleicaoCipa.Infraestrutura.CrossCutting.IOC;
+using EleicaoCipa.Infraestrutura.CrossCutting.Adapter.Map.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAutoMapper(map => map.AddMaps(typeof(CandidatoProfile)));
 
 builder.Services.RegisteModule();
 
