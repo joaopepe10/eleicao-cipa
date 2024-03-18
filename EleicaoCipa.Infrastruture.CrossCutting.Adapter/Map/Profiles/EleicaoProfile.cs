@@ -2,9 +2,9 @@
 using EleicaoCipa.Aplicacao.DTO.Dto.EleicaoDto.RequestDto;
 using EleicaoCipa.Aplicacao.DTO.Dto.EleicaoDto.ResponseDto;
 using EleicaoCipa.Dominio.Model;
-using EleicaoCipa.Infraestrutura.CrossCutting.Enum.Enums;
+using EleicaoCipa.Infraestrutura.CrossCutting.Enums.Enums;
 
-namespace EleicaoCipa.Infrastruture.CrossCutting.Adapter.Map.Profiles;
+namespace EleicaoCipa.Infraestrutura.CrossCutting.Adapter.Map.Profiles;
 
 public class EleicaoProfile : Profile
 {

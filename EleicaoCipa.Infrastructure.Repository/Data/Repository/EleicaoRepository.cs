@@ -1,10 +1,9 @@
-﻿using EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
-using EleicaoCipa.Dominio.Model;
+﻿using EleicaoCipa.Dominio.Model;
+using EleicaoCipa.Dominio.Nucleo.Interfaces.Repositories;
 using EleicaoCipa.Infraestrutura.Data;
-using EleicaoCipa.Infrastructure.Repository.Data.Repository;
 using Microsoft.EntityFrameworkCore;
 
-namespace EleicaoCipaVotacao.Data.Repository;
+namespace EleicaoCipa.Infraestrutura.Repository.Data.Repository;
 
 public class EleicaoRepository : RepositoryBase<Eleicao>, IEleicaoRepository
 {

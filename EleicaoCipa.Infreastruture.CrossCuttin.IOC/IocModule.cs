@@ -1,13 +1,13 @@
 ﻿using EleicaoCipa.Aplicacao.Interfaces;
 using EleicaoCipa.Aplicacao.Service;
-using EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
-using EleicaoCipa.Domain.Nucleo.Interfaces.Services;
-using EleicaoCipa.Domain.Servicos.Services;
+using EleicaoCipa.Dominio.Nucleo.Interfaces.Repositories;
+using EleicaoCipa.Dominio.Nucleo.Interfaces.Services;
+using EleicaoCipa.Dominio.Servicos.Services;
 using EleicaoCipa.Infraestrutura.Data;
-using EleicaoCipaVotacao.Data.Repository;
+using EleicaoCipa.Infraestrutura.Repository.Data.Repository;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EleicaoCipa.Infreastruture.CrossCutting.IOC;
+namespace EleicaoCipa.Infraestrutura.CrossCutting.IOC;
 
 public static class IocModule
 {
@@ -24,7 +24,7 @@ public static class IocModule
         RegisterRepository(services);
         RegisterService(services);
         RegisterApplicationService(services);
-    
+
     }
 
     private static void RegisterSingleton(IServiceCollection services)
@@ -32,9 +32,9 @@ public static class IocModule
 
     }
 
-    private static void RegisterTransient(IServiceCollection services) 
+    private static void RegisterTransient(IServiceCollection services)
     {
-        
+
     }
 
     private static void RegisterContext(IServiceCollection services)
@@ -58,7 +58,7 @@ public static class IocModule
         services.AddScoped<IServiceUsuario, ServiceUsuario>();
     }
 
-    private static void RegisterRepository(IServiceCollection services) 
+    private static void RegisterRepository(IServiceCollection services)
     {
         services.AddScoped<ICandidatoRepository, CandidatoRepository>();
         services.AddScoped<IUsuarioRepository, UsuarioRepository>();

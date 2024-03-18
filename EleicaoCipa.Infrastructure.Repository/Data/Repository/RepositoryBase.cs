@@ -1,4 +1,4 @@
-﻿using EleicaoCipa.Domain.Nucleo.Interfaces.Repositories;
+﻿using EleicaoCipa.Dominio.Nucleo.Interfaces.Repositories;
 using EleicaoCipa.Infraestrutura.Data;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EleicaoCipa.Infrastructure.Repository.Data.Repository;
+namespace EleicaoCipa.Infraestrutura.Repository.Data.Repository;
 
 public abstract class RepositoryBase<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
 {

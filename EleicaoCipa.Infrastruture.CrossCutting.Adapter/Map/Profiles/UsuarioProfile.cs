@@ -3,7 +3,7 @@ using EleicaoCipa.Aplicacao.DTO.Dto.UsuarioDto.RequestDto;
 using EleicaoCipa.Aplicacao.DTO.Dto.UsuarioDto.ResponseDto;
 using EleicaoCipa.Dominio.Model;
 
-namespace EleicaoCipa.Infrastruture.CrossCutting.Adapter.Map.Profiles;
+namespace EleicaoCipa.Infraestrutura.CrossCutting.Adapter.Map.Profiles;
 
 public class UsuarioProfile : Profile
 {
