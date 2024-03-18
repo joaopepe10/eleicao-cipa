@@ -41,17 +41,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EleicaoCipa.Infraestrutura.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EleicaoCipa.Apresentacao", "EleicaoCipa.Presentation\EleicaoCipa.Apresentacao.csproj", "{CE32C864-19B6-43F2-8137-023D166B97A4}"
 	ProjectSection(ProjectDependencies) = postProject
+		{89E7DD67-A785-4A25-A8E4-C8B1CBAF00B1} = {89E7DD67-A785-4A25-A8E4-C8B1CBAF00B1}
 		{A54E1180-A5A8-4D0A-81A3-EB1D55F60BBF} = {A54E1180-A5A8-4D0A-81A3-EB1D55F60BBF}
 		{ACD99119-675C-44F4-A638-C60F8BF0372F} = {ACD99119-675C-44F4-A638-C60F8BF0372F}
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 CrossCutting", "4.2 CrossCutting", "{DA200A08-650C-43D2-BA43-9FAF46AA4066}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EleicaoCipa.Infrastruture.CrossCutting.Adapter", "EleicaoCipa.Infrastruture.CrossCutting.Adapter\EleicaoCipa.Infrastruture.CrossCutting.Adapter.csproj", "{89E7DD67-A785-4A25-A8E4-C8B1CBAF00B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EleicaoCipa.Infraestrutura.CrossCutting.Adapter", "EleicaoCipa.Infrastruture.CrossCutting.Adapter\EleicaoCipa.Infraestrutura.CrossCutting.Adapter.csproj", "{89E7DD67-A785-4A25-A8E4-C8B1CBAF00B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EleicaoCipa.Infreastruture.CrossCutting.IOC", "EleicaoCipa.Infreastruture.CrossCuttin.IOC\EleicaoCipa.Infreastruture.CrossCutting.IOC.csproj", "{9DBDE4FF-329C-49D1-A62B-05BA25A81F7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EleicaoCipa.Infraestrutura.CrossCutting.IOC", "EleicaoCipa.Infreastruture.CrossCuttin.IOC\EleicaoCipa.Infraestrutura.CrossCutting.IOC.csproj", "{9DBDE4FF-329C-49D1-A62B-05BA25A81F7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EleicaoCipa.Infraestrutura.CrossCutting.Enum", "EleicaoCipa.Infraestrutura.CrossCutting.Enum\EleicaoCipa.Infraestrutura.CrossCutting.Enum.csproj", "{D4B9F605-D461-4F11-9223-E1154A34F710}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EleicaoCipa.Infraestrutura.CrossCutting.Enums", "EleicaoCipa.Infraestrutura.CrossCutting.Enum\EleicaoCipa.Infraestrutura.CrossCutting.Enums.csproj", "{D4B9F605-D461-4F11-9223-E1154A34F710}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

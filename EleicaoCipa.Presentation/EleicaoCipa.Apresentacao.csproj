@@ -23,7 +23,8 @@
 		<ProjectReference Include="..\EleicaoCipa.Application\EleicaoCipa.Aplicacao.csproj" />
 		<ProjectReference Include="..\EleicaoCipa.Infrastructure.Data\EleicaoCipa.Infraestrutura.Data.csproj" />
 		<ProjectReference Include="..\EleicaoCipa.Infrastructure.Repository\EleicaoCipa.Infraestrutura.Repository.csproj" />
-		<ProjectReference Include="..\EleicaoCipa.Infreastruture.CrossCuttin.IOC\EleicaoCipa.Infreastruture.CrossCutting.IOC.csproj" />
+		<ProjectReference Include="..\EleicaoCipa.Infrastruture.CrossCutting.Adapter\EleicaoCipa.Infraestrutura.CrossCutting.Adapter.csproj" />
+		<ProjectReference Include="..\EleicaoCipa.Infreastruture.CrossCuttin.IOC\EleicaoCipa.Infraestrutura.CrossCutting.IOC.csproj" />
 	</ItemGroup>
 
 </Project>
